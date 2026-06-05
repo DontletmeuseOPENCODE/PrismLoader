@@ -9,15 +9,17 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeCache.txt"
   "/home/szym/repos/PrismLoader/CMakeLists.txt"
   "CMakeFiles/4.3.3/CMakeCXXCompiler.cmake"
+  "CMakeFiles/4.3.3/CMakeRCCompiler.cmake"
   "CMakeFiles/4.3.3/CMakeSystem.cmake"
+  "/home/szym/repos/PrismLoader/cmake/mingw-w64-x86_64.cmake"
   "/home/szym/repos/PrismLoader/loader/CMakeLists.txt"
   "/home/szym/repos/PrismLoader/mods/example/CMakeLists.txt"
-  "/home/szym/repos/PrismLoader/prism/CMakeLists.txt"
   "/usr/share/cmake/Modules/CMakeCXXInformation.cmake"
   "/usr/share/cmake/Modules/CMakeCommonLanguageInclude.cmake"
   "/usr/share/cmake/Modules/CMakeGenericSystem.cmake"
   "/usr/share/cmake/Modules/CMakeInitializeConfigs.cmake"
   "/usr/share/cmake/Modules/CMakeLanguageInformation.cmake"
+  "/usr/share/cmake/Modules/CMakeRCInformation.cmake"
   "/usr/share/cmake/Modules/CMakeSystemSpecificInformation.cmake"
   "/usr/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake"
   "/usr/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake"
@@ -28,13 +30,15 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/usr/share/cmake/Modules/Linker/GNU-CXX.cmake"
   "/usr/share/cmake/Modules/Linker/GNU.cmake"
   "/usr/share/cmake/Modules/Platform/Linker/GNU.cmake"
-  "/usr/share/cmake/Modules/Platform/Linker/Linux-GNU-CXX.cmake"
-  "/usr/share/cmake/Modules/Platform/Linker/Linux-GNU.cmake"
-  "/usr/share/cmake/Modules/Platform/Linux-GNU-CXX.cmake"
-  "/usr/share/cmake/Modules/Platform/Linux-GNU.cmake"
-  "/usr/share/cmake/Modules/Platform/Linux-Initialize.cmake"
-  "/usr/share/cmake/Modules/Platform/Linux.cmake"
-  "/usr/share/cmake/Modules/Platform/UnixPaths.cmake"
+  "/usr/share/cmake/Modules/Platform/Linker/Windows-GNU-CXX.cmake"
+  "/usr/share/cmake/Modules/Platform/Linker/Windows-GNU.cmake"
+  "/usr/share/cmake/Modules/Platform/Windows-GNU-CXX-ABI.cmake"
+  "/usr/share/cmake/Modules/Platform/Windows-GNU-CXX.cmake"
+  "/usr/share/cmake/Modules/Platform/Windows-GNU.cmake"
+  "/usr/share/cmake/Modules/Platform/Windows-Initialize.cmake"
+  "/usr/share/cmake/Modules/Platform/Windows-windres.cmake"
+  "/usr/share/cmake/Modules/Platform/Windows.cmake"
+  "/usr/share/cmake/Modules/Platform/WindowsPaths.cmake"
   )
 
 # The corresponding makefile is:
@@ -47,13 +51,11 @@ set(CMAKE_MAKEFILE_OUTPUTS
 set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/CMakeDirectoryInformation.cmake"
   "loader/CMakeFiles/CMakeDirectoryInformation.cmake"
-  "prism/CMakeFiles/CMakeDirectoryInformation.cmake"
   "mods/example/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "loader/CMakeFiles/prismloader.dir/DependInfo.cmake"
-  "prism/CMakeFiles/prism.dir/DependInfo.cmake"
   "mods/example/CMakeFiles/example_mod.dir/DependInfo.cmake"
   )

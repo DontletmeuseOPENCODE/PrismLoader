@@ -143,3 +143,31 @@ bool HookEngine::restoreOriginal(Hook& hook) {
 }
 
 } // namespace prism
+
+#include <Prism/Hook.hpp>
+#include <Prism/PatternScan.hpp>
+
+extern "C" {
+
+__declspec(dllexport) bool prism_hook(void* target, void* detour, prism::HookHandle* out) {
+    prism::Hook hook;
+    bool success = prism::HookEngine::get().installHook(target, detour, &hook);
+    if (success && out) {
+        out->target = hook.target;
+        out->detour = hook.detour;
+        out->trampoline = hook.trampoline;
+    }
+    return success;
+}
+
+__declspec(dllexport) bool prism_unhook(prism::HookHandle* handle) {
+    if (!handle) return false;
+    return prism::HookEngine::get().removeHook(handle->target);
+}
+
+__declspec(dllexport) void* prism_resolve_address(const char* symbol) {
+    auto addr = prism::PatternScanner::get().resolveSymbol(symbol);
+    return addr ? reinterpret_cast<void*>(*addr) : nullptr;
+}
+
+}

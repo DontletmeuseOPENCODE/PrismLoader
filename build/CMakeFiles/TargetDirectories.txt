@@ -11,13 +11,6 @@
 /home/szym/repos/PrismLoader/build/loader/CMakeFiles/install.dir
 /home/szym/repos/PrismLoader/build/loader/CMakeFiles/install/local.dir
 /home/szym/repos/PrismLoader/build/loader/CMakeFiles/install/strip.dir
-/home/szym/repos/PrismLoader/build/prism/CMakeFiles/prism.dir
-/home/szym/repos/PrismLoader/build/prism/CMakeFiles/edit_cache.dir
-/home/szym/repos/PrismLoader/build/prism/CMakeFiles/rebuild_cache.dir
-/home/szym/repos/PrismLoader/build/prism/CMakeFiles/list_install_components.dir
-/home/szym/repos/PrismLoader/build/prism/CMakeFiles/install.dir
-/home/szym/repos/PrismLoader/build/prism/CMakeFiles/install/local.dir
-/home/szym/repos/PrismLoader/build/prism/CMakeFiles/install/strip.dir
 /home/szym/repos/PrismLoader/build/mods/example/CMakeFiles/example_mod.dir
 /home/szym/repos/PrismLoader/build/mods/example/CMakeFiles/edit_cache.dir
 /home/szym/repos/PrismLoader/build/mods/example/CMakeFiles/rebuild_cache.dir

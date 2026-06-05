@@ -8,8 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/szym/repos/PrismLoader/mods/example/src/main.cpp" "mods/example/CMakeFiles/example_mod.dir/src/main.cpp.o" "gcc" "mods/example/CMakeFiles/example_mod.dir/src/main.cpp.o.d"
-  "" "mods/example/libexample_mod.so" "gcc" "mods/example/CMakeFiles/example_mod.dir/link.d"
+  "/home/szym/repos/PrismLoader/mods/example/src/main.cpp" "mods/example/CMakeFiles/example_mod.dir/src/main.cpp.obj" "gcc" "mods/example/CMakeFiles/example_mod.dir/src/main.cpp.obj.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

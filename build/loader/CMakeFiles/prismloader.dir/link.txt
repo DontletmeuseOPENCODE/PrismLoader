@@ -1,1 +1,3 @@
-/usr/bin/c++ -fPIC -O3 -DNDEBUG -shared -Wl,--dependency-file=CMakeFiles/prismloader.dir/link.d -Wl,-soname,libprismloader.so -o libprismloader.so CMakeFiles/prismloader.dir/src/entry.cpp.o CMakeFiles/prismloader.dir/src/hookengine.cpp.o CMakeFiles/prismloader.dir/src/patternscan.cpp.o CMakeFiles/prismloader.dir/src/modloader.cpp.o CMakeFiles/prismloader.dir/src/gdinit.cpp.o CMakeFiles/prismloader.dir/src/ui/modmenu.cpp.o
+/usr/bin/cmake -E rm -f CMakeFiles/prismloader.dir/objects.a
+/usr/bin/x86_64-w64-mingw32-ar qc CMakeFiles/prismloader.dir/objects.a @CMakeFiles/prismloader.dir/objects1.rsp
+/usr/bin/x86_64-w64-mingw32-g++ -shared -static -static-libgcc -static-libstdc++ -o libprismloader.dll -Wl,--out-implib,libprismloader.dll.a -Wl,--major-image-version,0,--minor-image-version,0 -Wl,--whole-archive CMakeFiles/prismloader.dir/objects.a -Wl,--no-whole-archive @CMakeFiles/prismloader.dir/linkLibs.rsp

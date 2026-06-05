@@ -2,6 +2,7 @@
 #include <Prism/ModLoader.hpp>
 #include <Prism/HookEngine.hpp>
 #include <Prism/PatternScan.hpp>
+#include <Prism/ModMenu.hpp>
 #include <Log.hpp>
 #include <windows.h>
 #include <string>
@@ -34,6 +35,7 @@ bool Loader::init() {
     }
 
     detectGdInit();
+    installModMenuHook();
 
     logMsg("[Prism] Loader ready. Mods dir: %s", modsDir.c_str());
 

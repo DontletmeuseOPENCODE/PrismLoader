@@ -175,13 +175,13 @@ example_mod/fast:
 	cd /home/szym/repos/PrismLoader/build && $(MAKE) $(MAKESILENT) -f mods/example/CMakeFiles/example_mod.dir/build.make mods/example/CMakeFiles/example_mod.dir/build
 .PHONY : example_mod/fast
 
-src/main.o: src/main.cpp.o
-.PHONY : src/main.o
+src/main.obj: src/main.cpp.obj
+.PHONY : src/main.obj
 
 # target to build an object file
-src/main.cpp.o:
-	cd /home/szym/repos/PrismLoader/build && $(MAKE) $(MAKESILENT) -f mods/example/CMakeFiles/example_mod.dir/build.make mods/example/CMakeFiles/example_mod.dir/src/main.cpp.o
-.PHONY : src/main.cpp.o
+src/main.cpp.obj:
+	cd /home/szym/repos/PrismLoader/build && $(MAKE) $(MAKESILENT) -f mods/example/CMakeFiles/example_mod.dir/build.make mods/example/CMakeFiles/example_mod.dir/src/main.cpp.obj
+.PHONY : src/main.cpp.obj
 
 src/main.i: src/main.cpp.i
 .PHONY : src/main.i
@@ -212,7 +212,7 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... example_mod"
-	@echo "... src/main.o"
+	@echo "... src/main.obj"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
 .PHONY : help

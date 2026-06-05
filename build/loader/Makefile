@@ -175,37 +175,37 @@ prismloader/fast:
 	cd /home/szym/repos/PrismLoader/build && $(MAKE) $(MAKESILENT) -f loader/CMakeFiles/prismloader.dir/build.make loader/CMakeFiles/prismloader.dir/build
 .PHONY : prismloader/fast
 
-src/entry.o: src/entry.cpp.o
-.PHONY : src/entry.o
+src/dllmain.obj: src/dllmain.cpp.obj
+.PHONY : src/dllmain.obj
 
 # target to build an object file
-src/entry.cpp.o:
-	cd /home/szym/repos/PrismLoader/build && $(MAKE) $(MAKESILENT) -f loader/CMakeFiles/prismloader.dir/build.make loader/CMakeFiles/prismloader.dir/src/entry.cpp.o
-.PHONY : src/entry.cpp.o
+src/dllmain.cpp.obj:
+	cd /home/szym/repos/PrismLoader/build && $(MAKE) $(MAKESILENT) -f loader/CMakeFiles/prismloader.dir/build.make loader/CMakeFiles/prismloader.dir/src/dllmain.cpp.obj
+.PHONY : src/dllmain.cpp.obj
 
-src/entry.i: src/entry.cpp.i
-.PHONY : src/entry.i
+src/dllmain.i: src/dllmain.cpp.i
+.PHONY : src/dllmain.i
 
 # target to preprocess a source file
-src/entry.cpp.i:
-	cd /home/szym/repos/PrismLoader/build && $(MAKE) $(MAKESILENT) -f loader/CMakeFiles/prismloader.dir/build.make loader/CMakeFiles/prismloader.dir/src/entry.cpp.i
-.PHONY : src/entry.cpp.i
+src/dllmain.cpp.i:
+	cd /home/szym/repos/PrismLoader/build && $(MAKE) $(MAKESILENT) -f loader/CMakeFiles/prismloader.dir/build.make loader/CMakeFiles/prismloader.dir/src/dllmain.cpp.i
+.PHONY : src/dllmain.cpp.i
 
-src/entry.s: src/entry.cpp.s
-.PHONY : src/entry.s
+src/dllmain.s: src/dllmain.cpp.s
+.PHONY : src/dllmain.s
 
 # target to generate assembly for a file
-src/entry.cpp.s:
-	cd /home/szym/repos/PrismLoader/build && $(MAKE) $(MAKESILENT) -f loader/CMakeFiles/prismloader.dir/build.make loader/CMakeFiles/prismloader.dir/src/entry.cpp.s
-.PHONY : src/entry.cpp.s
+src/dllmain.cpp.s:
+	cd /home/szym/repos/PrismLoader/build && $(MAKE) $(MAKESILENT) -f loader/CMakeFiles/prismloader.dir/build.make loader/CMakeFiles/prismloader.dir/src/dllmain.cpp.s
+.PHONY : src/dllmain.cpp.s
 
-src/gdinit.o: src/gdinit.cpp.o
-.PHONY : src/gdinit.o
+src/gdinit.obj: src/gdinit.cpp.obj
+.PHONY : src/gdinit.obj
 
 # target to build an object file
-src/gdinit.cpp.o:
-	cd /home/szym/repos/PrismLoader/build && $(MAKE) $(MAKESILENT) -f loader/CMakeFiles/prismloader.dir/build.make loader/CMakeFiles/prismloader.dir/src/gdinit.cpp.o
-.PHONY : src/gdinit.cpp.o
+src/gdinit.cpp.obj:
+	cd /home/szym/repos/PrismLoader/build && $(MAKE) $(MAKESILENT) -f loader/CMakeFiles/prismloader.dir/build.make loader/CMakeFiles/prismloader.dir/src/gdinit.cpp.obj
+.PHONY : src/gdinit.cpp.obj
 
 src/gdinit.i: src/gdinit.cpp.i
 .PHONY : src/gdinit.i
@@ -223,13 +223,13 @@ src/gdinit.cpp.s:
 	cd /home/szym/repos/PrismLoader/build && $(MAKE) $(MAKESILENT) -f loader/CMakeFiles/prismloader.dir/build.make loader/CMakeFiles/prismloader.dir/src/gdinit.cpp.s
 .PHONY : src/gdinit.cpp.s
 
-src/hookengine.o: src/hookengine.cpp.o
-.PHONY : src/hookengine.o
+src/hookengine.obj: src/hookengine.cpp.obj
+.PHONY : src/hookengine.obj
 
 # target to build an object file
-src/hookengine.cpp.o:
-	cd /home/szym/repos/PrismLoader/build && $(MAKE) $(MAKESILENT) -f loader/CMakeFiles/prismloader.dir/build.make loader/CMakeFiles/prismloader.dir/src/hookengine.cpp.o
-.PHONY : src/hookengine.cpp.o
+src/hookengine.cpp.obj:
+	cd /home/szym/repos/PrismLoader/build && $(MAKE) $(MAKESILENT) -f loader/CMakeFiles/prismloader.dir/build.make loader/CMakeFiles/prismloader.dir/src/hookengine.cpp.obj
+.PHONY : src/hookengine.cpp.obj
 
 src/hookengine.i: src/hookengine.cpp.i
 .PHONY : src/hookengine.i
@@ -247,13 +247,61 @@ src/hookengine.cpp.s:
 	cd /home/szym/repos/PrismLoader/build && $(MAKE) $(MAKESILENT) -f loader/CMakeFiles/prismloader.dir/build.make loader/CMakeFiles/prismloader.dir/src/hookengine.cpp.s
 .PHONY : src/hookengine.cpp.s
 
-src/modloader.o: src/modloader.cpp.o
-.PHONY : src/modloader.o
+src/loader.obj: src/loader.cpp.obj
+.PHONY : src/loader.obj
 
 # target to build an object file
-src/modloader.cpp.o:
-	cd /home/szym/repos/PrismLoader/build && $(MAKE) $(MAKESILENT) -f loader/CMakeFiles/prismloader.dir/build.make loader/CMakeFiles/prismloader.dir/src/modloader.cpp.o
-.PHONY : src/modloader.cpp.o
+src/loader.cpp.obj:
+	cd /home/szym/repos/PrismLoader/build && $(MAKE) $(MAKESILENT) -f loader/CMakeFiles/prismloader.dir/build.make loader/CMakeFiles/prismloader.dir/src/loader.cpp.obj
+.PHONY : src/loader.cpp.obj
+
+src/loader.i: src/loader.cpp.i
+.PHONY : src/loader.i
+
+# target to preprocess a source file
+src/loader.cpp.i:
+	cd /home/szym/repos/PrismLoader/build && $(MAKE) $(MAKESILENT) -f loader/CMakeFiles/prismloader.dir/build.make loader/CMakeFiles/prismloader.dir/src/loader.cpp.i
+.PHONY : src/loader.cpp.i
+
+src/loader.s: src/loader.cpp.s
+.PHONY : src/loader.s
+
+# target to generate assembly for a file
+src/loader.cpp.s:
+	cd /home/szym/repos/PrismLoader/build && $(MAKE) $(MAKESILENT) -f loader/CMakeFiles/prismloader.dir/build.make loader/CMakeFiles/prismloader.dir/src/loader.cpp.s
+.PHONY : src/loader.cpp.s
+
+src/log.obj: src/log.cpp.obj
+.PHONY : src/log.obj
+
+# target to build an object file
+src/log.cpp.obj:
+	cd /home/szym/repos/PrismLoader/build && $(MAKE) $(MAKESILENT) -f loader/CMakeFiles/prismloader.dir/build.make loader/CMakeFiles/prismloader.dir/src/log.cpp.obj
+.PHONY : src/log.cpp.obj
+
+src/log.i: src/log.cpp.i
+.PHONY : src/log.i
+
+# target to preprocess a source file
+src/log.cpp.i:
+	cd /home/szym/repos/PrismLoader/build && $(MAKE) $(MAKESILENT) -f loader/CMakeFiles/prismloader.dir/build.make loader/CMakeFiles/prismloader.dir/src/log.cpp.i
+.PHONY : src/log.cpp.i
+
+src/log.s: src/log.cpp.s
+.PHONY : src/log.s
+
+# target to generate assembly for a file
+src/log.cpp.s:
+	cd /home/szym/repos/PrismLoader/build && $(MAKE) $(MAKESILENT) -f loader/CMakeFiles/prismloader.dir/build.make loader/CMakeFiles/prismloader.dir/src/log.cpp.s
+.PHONY : src/log.cpp.s
+
+src/modloader.obj: src/modloader.cpp.obj
+.PHONY : src/modloader.obj
+
+# target to build an object file
+src/modloader.cpp.obj:
+	cd /home/szym/repos/PrismLoader/build && $(MAKE) $(MAKESILENT) -f loader/CMakeFiles/prismloader.dir/build.make loader/CMakeFiles/prismloader.dir/src/modloader.cpp.obj
+.PHONY : src/modloader.cpp.obj
 
 src/modloader.i: src/modloader.cpp.i
 .PHONY : src/modloader.i
@@ -271,13 +319,13 @@ src/modloader.cpp.s:
 	cd /home/szym/repos/PrismLoader/build && $(MAKE) $(MAKESILENT) -f loader/CMakeFiles/prismloader.dir/build.make loader/CMakeFiles/prismloader.dir/src/modloader.cpp.s
 .PHONY : src/modloader.cpp.s
 
-src/patternscan.o: src/patternscan.cpp.o
-.PHONY : src/patternscan.o
+src/patternscan.obj: src/patternscan.cpp.obj
+.PHONY : src/patternscan.obj
 
 # target to build an object file
-src/patternscan.cpp.o:
-	cd /home/szym/repos/PrismLoader/build && $(MAKE) $(MAKESILENT) -f loader/CMakeFiles/prismloader.dir/build.make loader/CMakeFiles/prismloader.dir/src/patternscan.cpp.o
-.PHONY : src/patternscan.cpp.o
+src/patternscan.cpp.obj:
+	cd /home/szym/repos/PrismLoader/build && $(MAKE) $(MAKESILENT) -f loader/CMakeFiles/prismloader.dir/build.make loader/CMakeFiles/prismloader.dir/src/patternscan.cpp.obj
+.PHONY : src/patternscan.cpp.obj
 
 src/patternscan.i: src/patternscan.cpp.i
 .PHONY : src/patternscan.i
@@ -295,13 +343,13 @@ src/patternscan.cpp.s:
 	cd /home/szym/repos/PrismLoader/build && $(MAKE) $(MAKESILENT) -f loader/CMakeFiles/prismloader.dir/build.make loader/CMakeFiles/prismloader.dir/src/patternscan.cpp.s
 .PHONY : src/patternscan.cpp.s
 
-src/ui/modmenu.o: src/ui/modmenu.cpp.o
-.PHONY : src/ui/modmenu.o
+src/ui/modmenu.obj: src/ui/modmenu.cpp.obj
+.PHONY : src/ui/modmenu.obj
 
 # target to build an object file
-src/ui/modmenu.cpp.o:
-	cd /home/szym/repos/PrismLoader/build && $(MAKE) $(MAKESILENT) -f loader/CMakeFiles/prismloader.dir/build.make loader/CMakeFiles/prismloader.dir/src/ui/modmenu.cpp.o
-.PHONY : src/ui/modmenu.cpp.o
+src/ui/modmenu.cpp.obj:
+	cd /home/szym/repos/PrismLoader/build && $(MAKE) $(MAKESILENT) -f loader/CMakeFiles/prismloader.dir/build.make loader/CMakeFiles/prismloader.dir/src/ui/modmenu.cpp.obj
+.PHONY : src/ui/modmenu.cpp.obj
 
 src/ui/modmenu.i: src/ui/modmenu.cpp.i
 .PHONY : src/ui/modmenu.i
@@ -332,22 +380,28 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... prismloader"
-	@echo "... src/entry.o"
-	@echo "... src/entry.i"
-	@echo "... src/entry.s"
-	@echo "... src/gdinit.o"
+	@echo "... src/dllmain.obj"
+	@echo "... src/dllmain.i"
+	@echo "... src/dllmain.s"
+	@echo "... src/gdinit.obj"
 	@echo "... src/gdinit.i"
 	@echo "... src/gdinit.s"
-	@echo "... src/hookengine.o"
+	@echo "... src/hookengine.obj"
 	@echo "... src/hookengine.i"
 	@echo "... src/hookengine.s"
-	@echo "... src/modloader.o"
+	@echo "... src/loader.obj"
+	@echo "... src/loader.i"
+	@echo "... src/loader.s"
+	@echo "... src/log.obj"
+	@echo "... src/log.i"
+	@echo "... src/log.s"
+	@echo "... src/modloader.obj"
 	@echo "... src/modloader.i"
 	@echo "... src/modloader.s"
-	@echo "... src/patternscan.o"
+	@echo "... src/patternscan.obj"
 	@echo "... src/patternscan.i"
 	@echo "... src/patternscan.s"
-	@echo "... src/ui/modmenu.o"
+	@echo "... src/ui/modmenu.obj"
 	@echo "... src/ui/modmenu.i"
 	@echo "... src/ui/modmenu.s"
 .PHONY : help

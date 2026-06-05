@@ -67,7 +67,7 @@ x86_64-w64-mingw32-g++ \
     -I"$PROJECT_DIR/loader/include" \
     -I"$PROJECT_DIR/sdk/include" \
     -lpsapi \
-    -static-libgcc -static-libstdc++ \
+    -static -static-libgcc -static-libstdc++ \
     "$BUILD_DIR/prismproxy.def" \
     -Wl,--enable-stdcall-fixup
 

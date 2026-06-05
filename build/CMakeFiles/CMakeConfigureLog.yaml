@@ -20,6 +20,7 @@ events:
     names:
       - "uname"
     candidate_directories:
+      - "/home/szym/.gemini/antigravity-ide/bin/"
       - "/home/szym/.local/share/mise/shims/"
       - "/home/szym/.local/share/omarchy/bin/"
       - "/usr/local/sbin/"
@@ -31,6 +32,7 @@ events:
       - "/home/szym/.local/bin/"
       - "/bin/"
     searched_directories:
+      - "/home/szym/.gemini/antigravity-ide/bin/uname"
       - "/home/szym/.local/share/mise/shims/uname"
       - "/home/szym/.local/share/omarchy/bin/uname"
       - "/usr/local/sbin/uname"
@@ -38,6 +40,7 @@ events:
     found: "/usr/bin/uname"
     search_context:
       ENV{PATH}:
+        - "/home/szym/.gemini/antigravity-ide/bin"
         - "/home/szym/.local/share/mise/shims"
         - "/home/szym/.local/share/omarchy/bin"
         - "/usr/local/sbin"
@@ -50,10 +53,11 @@ events:
   -
     kind: "message-v1"
     backtrace:
-      - "/usr/share/cmake/Modules/CMakeDetermineSystem.cmake:212 (message)"
+      - "/usr/share/cmake/Modules/CMakeDetermineSystem.cmake:207 (message)"
       - "CMakeLists.txt:2 (project)"
     message: |
-      The system is: Linux - 7.0.9-arch2-1 - x86_64
+      The target system is: Windows -  - x86_64
+      The host system is: Linux - 7.0.9-arch2-1 - x86_64
   -
     kind: "find-v1"
     backtrace:
@@ -75,6 +79,7 @@ events:
       - "make"
       - "smake"
     candidate_directories:
+      - "/home/szym/.gemini/antigravity-ide/bin/"
       - "/home/szym/.local/share/mise/shims/"
       - "/home/szym/.local/share/omarchy/bin/"
       - "/usr/local/sbin/"
@@ -85,6 +90,7 @@ events:
       - "/usr/bin/core_perl/"
       - "/home/szym/.local/bin/"
     searched_directories:
+      - "/home/szym/.gemini/antigravity-ide/bin/gmake"
       - "/home/szym/.local/share/mise/shims/gmake"
       - "/home/szym/.local/share/omarchy/bin/gmake"
       - "/usr/local/sbin/gmake"
@@ -94,6 +100,7 @@ events:
       - "/usr/bin/vendor_perl/gmake"
       - "/usr/bin/core_perl/gmake"
       - "/home/szym/.local/bin/gmake"
+      - "/home/szym/.gemini/antigravity-ide/bin/make"
       - "/home/szym/.local/share/mise/shims/make"
       - "/home/szym/.local/share/omarchy/bin/make"
       - "/usr/local/sbin/make"
@@ -101,6 +108,7 @@ events:
     found: "/usr/bin/make"
     search_context:
       ENV{PATH}:
+        - "/home/szym/.gemini/antigravity-ide/bin"
         - "/home/szym/.local/share/mise/shims"
         - "/home/szym/.local/share/omarchy/bin"
         - "/usr/local/sbin"
@@ -110,15 +118,16 @@ events:
         - "/usr/bin/vendor_perl"
         - "/usr/bin/core_perl"
         - "/home/szym/.local/bin"
+      CMAKE_FIND_ROOT_PATH: "/usr/x86_64-w64-mingw32"
   -
     kind: "find-v1"
     backtrace:
-      - "/usr/share/cmake/Modules/CMakeDetermineCompiler.cmake:73 (find_program)"
-      - "/usr/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake:69 (_cmake_find_compiler)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCompiler.cmake:115 (find_program)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake:71 (_cmake_find_compiler_path)"
       - "CMakeLists.txt:2 (project)"
     mode: "program"
-    variable: "CMAKE_CXX_COMPILER"
-    description: "CXX compiler"
+    variable: "CMAKE_CXX_COMPILER_WITH_PATH"
+    description: "Path to a program."
     settings:
       SearchFramework: "NEVER"
       SearchAppBundle: "NEVER"
@@ -128,17 +137,9 @@ events:
       CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
       CMAKE_FIND_USE_INSTALL_PREFIX: true
     names:
-      - "c++"
-      - "CC"
-      - "g++"
-      - "aCC"
-      - "cl"
-      - "bcc"
-      - "xlC"
-      - "icpx"
-      - "icx"
-      - "clang++"
+      - "x86_64-w64-mingw32-g++"
     candidate_directories:
+      - "/home/szym/.gemini/antigravity-ide/bin/"
       - "/home/szym/.local/share/mise/shims/"
       - "/home/szym/.local/share/omarchy/bin/"
       - "/usr/local/sbin/"
@@ -149,13 +150,15 @@ events:
       - "/usr/bin/core_perl/"
       - "/home/szym/.local/bin/"
     searched_directories:
-      - "/home/szym/.local/share/mise/shims/c++"
-      - "/home/szym/.local/share/omarchy/bin/c++"
-      - "/usr/local/sbin/c++"
-      - "/usr/local/bin/c++"
-    found: "/usr/bin/c++"
+      - "/home/szym/.gemini/antigravity-ide/bin/x86_64-w64-mingw32-g++"
+      - "/home/szym/.local/share/mise/shims/x86_64-w64-mingw32-g++"
+      - "/home/szym/.local/share/omarchy/bin/x86_64-w64-mingw32-g++"
+      - "/usr/local/sbin/x86_64-w64-mingw32-g++"
+      - "/usr/local/bin/x86_64-w64-mingw32-g++"
+    found: "/usr/bin/x86_64-w64-mingw32-g++"
     search_context:
       ENV{PATH}:
+        - "/home/szym/.gemini/antigravity-ide/bin"
         - "/home/szym/.local/share/mise/shims"
         - "/home/szym/.local/share/omarchy/bin"
         - "/usr/local/sbin"
@@ -165,6 +168,7 @@ events:
         - "/usr/bin/vendor_perl"
         - "/usr/bin/core_perl"
         - "/home/szym/.local/bin"
+      CMAKE_FIND_ROOT_PATH: "/usr/x86_64-w64-mingw32"
   -
     kind: "find-v1"
     backtrace:
@@ -192,6 +196,7 @@ events:
     found: "/usr/share/cmake/Modules/CMakeCXXCompilerId.cpp.in"
     search_context:
       ENV{PATH}:
+        - "/home/szym/.gemini/antigravity-ide/bin"
         - "/home/szym/.local/share/mise/shims"
         - "/home/szym/.local/share/omarchy/bin"
         - "/usr/local/sbin"
@@ -201,6 +206,7 @@ events:
         - "/usr/bin/vendor_perl"
         - "/usr/bin/core_perl"
         - "/home/szym/.local/bin"
+      CMAKE_FIND_ROOT_PATH: "/usr/x86_64-w64-mingw32"
   -
     kind: "message-v1"
     backtrace:
@@ -210,7 +216,7 @@ events:
       - "CMakeLists.txt:2 (project)"
     message: |
       Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
-      Compiler: /usr/bin/c++ 
+      Compiler: /usr/bin/x86_64-w64-mingw32-g++ 
       Build flags: 
       Id flags:  
       
@@ -218,10 +224,10 @@ events:
       0
       
       
-      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.exe"
       
       The CXX compiler identification is GNU, found in:
-        /home/szym/repos/PrismLoader/build/CMakeFiles/4.3.3/CompilerIdCXX/a.out
+        /home/szym/repos/PrismLoader/build/CMakeFiles/4.3.3/CompilerIdCXX/a.exe
       
   -
     kind: "find-v1"
@@ -241,9 +247,11 @@ events:
       CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
       CMAKE_FIND_USE_INSTALL_PREFIX: true
     names:
+      - "x86_64-w64-mingw32-ar"
       - "ar"
     candidate_directories:
       - "/usr/bin/"
+      - "/home/szym/.gemini/antigravity-ide/bin/"
       - "/home/szym/.local/share/mise/shims/"
       - "/home/szym/.local/share/omarchy/bin/"
       - "/usr/local/sbin/"
@@ -252,9 +260,10 @@ events:
       - "/usr/bin/vendor_perl/"
       - "/usr/bin/core_perl/"
       - "/home/szym/.local/bin/"
-    found: "/usr/bin/ar"
+    found: "/usr/bin/x86_64-w64-mingw32-ar"
     search_context:
       ENV{PATH}:
+        - "/home/szym/.gemini/antigravity-ide/bin"
         - "/home/szym/.local/share/mise/shims"
         - "/home/szym/.local/share/omarchy/bin"
         - "/usr/local/sbin"
@@ -264,6 +273,7 @@ events:
         - "/usr/bin/vendor_perl"
         - "/usr/bin/core_perl"
         - "/home/szym/.local/bin"
+      CMAKE_FIND_ROOT_PATH: "/usr/x86_64-w64-mingw32"
   -
     kind: "find-v1"
     backtrace:
@@ -282,9 +292,11 @@ events:
       CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
       CMAKE_FIND_USE_INSTALL_PREFIX: true
     names:
+      - "x86_64-w64-mingw32-ranlib"
       - "ranlib"
     candidate_directories:
       - "/usr/bin/"
+      - "/home/szym/.gemini/antigravity-ide/bin/"
       - "/home/szym/.local/share/mise/shims/"
       - "/home/szym/.local/share/omarchy/bin/"
       - "/usr/local/sbin/"
@@ -293,9 +305,10 @@ events:
       - "/usr/bin/vendor_perl/"
       - "/usr/bin/core_perl/"
       - "/home/szym/.local/bin/"
-    found: "/usr/bin/ranlib"
+    found: "/usr/bin/x86_64-w64-mingw32-ranlib"
     search_context:
       ENV{PATH}:
+        - "/home/szym/.gemini/antigravity-ide/bin"
         - "/home/szym/.local/share/mise/shims"
         - "/home/szym/.local/share/omarchy/bin"
         - "/usr/local/sbin"
@@ -305,6 +318,7 @@ events:
         - "/usr/bin/vendor_perl"
         - "/usr/bin/core_perl"
         - "/home/szym/.local/bin"
+      CMAKE_FIND_ROOT_PATH: "/usr/x86_64-w64-mingw32"
   -
     kind: "find-v1"
     backtrace:
@@ -323,9 +337,11 @@ events:
       CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
       CMAKE_FIND_USE_INSTALL_PREFIX: true
     names:
+      - "x86_64-w64-mingw32-strip"
       - "strip"
     candidate_directories:
       - "/usr/bin/"
+      - "/home/szym/.gemini/antigravity-ide/bin/"
       - "/home/szym/.local/share/mise/shims/"
       - "/home/szym/.local/share/omarchy/bin/"
       - "/usr/local/sbin/"
@@ -334,9 +350,10 @@ events:
       - "/usr/bin/vendor_perl/"
       - "/usr/bin/core_perl/"
       - "/home/szym/.local/bin/"
-    found: "/usr/bin/strip"
+    found: "/usr/bin/x86_64-w64-mingw32-strip"
     search_context:
       ENV{PATH}:
+        - "/home/szym/.gemini/antigravity-ide/bin"
         - "/home/szym/.local/share/mise/shims"
         - "/home/szym/.local/share/omarchy/bin"
         - "/usr/local/sbin"
@@ -346,6 +363,7 @@ events:
         - "/usr/bin/vendor_perl"
         - "/usr/bin/core_perl"
         - "/home/szym/.local/bin"
+      CMAKE_FIND_ROOT_PATH: "/usr/x86_64-w64-mingw32"
   -
     kind: "find-v1"
     backtrace:
@@ -364,9 +382,11 @@ events:
       CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
       CMAKE_FIND_USE_INSTALL_PREFIX: true
     names:
+      - "x86_64-w64-mingw32-ld"
       - "ld"
     candidate_directories:
       - "/usr/bin/"
+      - "/home/szym/.gemini/antigravity-ide/bin/"
       - "/home/szym/.local/share/mise/shims/"
       - "/home/szym/.local/share/omarchy/bin/"
       - "/usr/local/sbin/"
@@ -375,9 +395,10 @@ events:
       - "/usr/bin/vendor_perl/"
       - "/usr/bin/core_perl/"
       - "/home/szym/.local/bin/"
-    found: "/usr/bin/ld"
+    found: "/usr/bin/x86_64-w64-mingw32-ld"
     search_context:
       ENV{PATH}:
+        - "/home/szym/.gemini/antigravity-ide/bin"
         - "/home/szym/.local/share/mise/shims"
         - "/home/szym/.local/share/omarchy/bin"
         - "/usr/local/sbin"
@@ -387,6 +408,7 @@ events:
         - "/usr/bin/vendor_perl"
         - "/usr/bin/core_perl"
         - "/home/szym/.local/bin"
+      CMAKE_FIND_ROOT_PATH: "/usr/x86_64-w64-mingw32"
   -
     kind: "find-v1"
     backtrace:
@@ -405,9 +427,11 @@ events:
       CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
       CMAKE_FIND_USE_INSTALL_PREFIX: true
     names:
+      - "x86_64-w64-mingw32-nm"
       - "nm"
     candidate_directories:
       - "/usr/bin/"
+      - "/home/szym/.gemini/antigravity-ide/bin/"
       - "/home/szym/.local/share/mise/shims/"
       - "/home/szym/.local/share/omarchy/bin/"
       - "/usr/local/sbin/"
@@ -416,9 +440,10 @@ events:
       - "/usr/bin/vendor_perl/"
       - "/usr/bin/core_perl/"
       - "/home/szym/.local/bin/"
-    found: "/usr/bin/nm"
+    found: "/usr/bin/x86_64-w64-mingw32-nm"
     search_context:
       ENV{PATH}:
+        - "/home/szym/.gemini/antigravity-ide/bin"
         - "/home/szym/.local/share/mise/shims"
         - "/home/szym/.local/share/omarchy/bin"
         - "/usr/local/sbin"
@@ -428,6 +453,7 @@ events:
         - "/usr/bin/vendor_perl"
         - "/usr/bin/core_perl"
         - "/home/szym/.local/bin"
+      CMAKE_FIND_ROOT_PATH: "/usr/x86_64-w64-mingw32"
   -
     kind: "find-v1"
     backtrace:
@@ -446,9 +472,11 @@ events:
       CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
       CMAKE_FIND_USE_INSTALL_PREFIX: true
     names:
+      - "x86_64-w64-mingw32-objdump"
       - "objdump"
     candidate_directories:
       - "/usr/bin/"
+      - "/home/szym/.gemini/antigravity-ide/bin/"
       - "/home/szym/.local/share/mise/shims/"
       - "/home/szym/.local/share/omarchy/bin/"
       - "/usr/local/sbin/"
@@ -457,9 +485,10 @@ events:
       - "/usr/bin/vendor_perl/"
       - "/usr/bin/core_perl/"
       - "/home/szym/.local/bin/"
-    found: "/usr/bin/objdump"
+    found: "/usr/bin/x86_64-w64-mingw32-objdump"
     search_context:
       ENV{PATH}:
+        - "/home/szym/.gemini/antigravity-ide/bin"
         - "/home/szym/.local/share/mise/shims"
         - "/home/szym/.local/share/omarchy/bin"
         - "/usr/local/sbin"
@@ -469,6 +498,7 @@ events:
         - "/usr/bin/vendor_perl"
         - "/usr/bin/core_perl"
         - "/home/szym/.local/bin"
+      CMAKE_FIND_ROOT_PATH: "/usr/x86_64-w64-mingw32"
   -
     kind: "find-v1"
     backtrace:
@@ -487,9 +517,11 @@ events:
       CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
       CMAKE_FIND_USE_INSTALL_PREFIX: true
     names:
+      - "x86_64-w64-mingw32-objcopy"
       - "objcopy"
     candidate_directories:
       - "/usr/bin/"
+      - "/home/szym/.gemini/antigravity-ide/bin/"
       - "/home/szym/.local/share/mise/shims/"
       - "/home/szym/.local/share/omarchy/bin/"
       - "/usr/local/sbin/"
@@ -498,9 +530,10 @@ events:
       - "/usr/bin/vendor_perl/"
       - "/usr/bin/core_perl/"
       - "/home/szym/.local/bin/"
-    found: "/usr/bin/objcopy"
+    found: "/usr/bin/x86_64-w64-mingw32-objcopy"
     search_context:
       ENV{PATH}:
+        - "/home/szym/.gemini/antigravity-ide/bin"
         - "/home/szym/.local/share/mise/shims"
         - "/home/szym/.local/share/omarchy/bin"
         - "/usr/local/sbin"
@@ -510,6 +543,7 @@ events:
         - "/usr/bin/vendor_perl"
         - "/usr/bin/core_perl"
         - "/home/szym/.local/bin"
+      CMAKE_FIND_ROOT_PATH: "/usr/x86_64-w64-mingw32"
   -
     kind: "find-v1"
     backtrace:
@@ -528,9 +562,11 @@ events:
       CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
       CMAKE_FIND_USE_INSTALL_PREFIX: true
     names:
+      - "x86_64-w64-mingw32-readelf"
       - "readelf"
     candidate_directories:
       - "/usr/bin/"
+      - "/home/szym/.gemini/antigravity-ide/bin/"
       - "/home/szym/.local/share/mise/shims/"
       - "/home/szym/.local/share/omarchy/bin/"
       - "/usr/local/sbin/"
@@ -539,9 +575,10 @@ events:
       - "/usr/bin/vendor_perl/"
       - "/usr/bin/core_perl/"
       - "/home/szym/.local/bin/"
-    found: "/usr/bin/readelf"
+    found: "/usr/bin/x86_64-w64-mingw32-readelf"
     search_context:
       ENV{PATH}:
+        - "/home/szym/.gemini/antigravity-ide/bin"
         - "/home/szym/.local/share/mise/shims"
         - "/home/szym/.local/share/omarchy/bin"
         - "/usr/local/sbin"
@@ -551,6 +588,7 @@ events:
         - "/usr/bin/vendor_perl"
         - "/usr/bin/core_perl"
         - "/home/szym/.local/bin"
+      CMAKE_FIND_ROOT_PATH: "/usr/x86_64-w64-mingw32"
   -
     kind: "find-v1"
     backtrace:
@@ -569,9 +607,11 @@ events:
       CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
       CMAKE_FIND_USE_INSTALL_PREFIX: true
     names:
+      - "x86_64-w64-mingw32-dlltool"
       - "dlltool"
     candidate_directories:
       - "/usr/bin/"
+      - "/home/szym/.gemini/antigravity-ide/bin/"
       - "/home/szym/.local/share/mise/shims/"
       - "/home/szym/.local/share/omarchy/bin/"
       - "/usr/local/sbin/"
@@ -580,19 +620,10 @@ events:
       - "/usr/bin/vendor_perl/"
       - "/usr/bin/core_perl/"
       - "/home/szym/.local/bin/"
-    searched_directories:
-      - "/usr/bin/dlltool"
-      - "/home/szym/.local/share/mise/shims/dlltool"
-      - "/home/szym/.local/share/omarchy/bin/dlltool"
-      - "/usr/local/sbin/dlltool"
-      - "/usr/local/bin/dlltool"
-      - "/usr/bin/site_perl/dlltool"
-      - "/usr/bin/vendor_perl/dlltool"
-      - "/usr/bin/core_perl/dlltool"
-      - "/home/szym/.local/bin/dlltool"
-    found: false
+    found: "/usr/bin/x86_64-w64-mingw32-dlltool"
     search_context:
       ENV{PATH}:
+        - "/home/szym/.gemini/antigravity-ide/bin"
         - "/home/szym/.local/share/mise/shims"
         - "/home/szym/.local/share/omarchy/bin"
         - "/usr/local/sbin"
@@ -602,6 +633,7 @@ events:
         - "/usr/bin/vendor_perl"
         - "/usr/bin/core_perl"
         - "/home/szym/.local/bin"
+      CMAKE_FIND_ROOT_PATH: "/usr/x86_64-w64-mingw32"
   -
     kind: "find-v1"
     backtrace:
@@ -620,9 +652,11 @@ events:
       CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
       CMAKE_FIND_USE_INSTALL_PREFIX: true
     names:
+      - "x86_64-w64-mingw32-addr2line"
       - "addr2line"
     candidate_directories:
       - "/usr/bin/"
+      - "/home/szym/.gemini/antigravity-ide/bin/"
       - "/home/szym/.local/share/mise/shims/"
       - "/home/szym/.local/share/omarchy/bin/"
       - "/usr/local/sbin/"
@@ -631,9 +665,10 @@ events:
       - "/usr/bin/vendor_perl/"
       - "/usr/bin/core_perl/"
       - "/home/szym/.local/bin/"
-    found: "/usr/bin/addr2line"
+    found: "/usr/bin/x86_64-w64-mingw32-addr2line"
     search_context:
       ENV{PATH}:
+        - "/home/szym/.gemini/antigravity-ide/bin"
         - "/home/szym/.local/share/mise/shims"
         - "/home/szym/.local/share/omarchy/bin"
         - "/usr/local/sbin"
@@ -643,6 +678,7 @@ events:
         - "/usr/bin/vendor_perl"
         - "/usr/bin/core_perl"
         - "/home/szym/.local/bin"
+      CMAKE_FIND_ROOT_PATH: "/usr/x86_64-w64-mingw32"
   -
     kind: "find-v1"
     backtrace:
@@ -661,9 +697,11 @@ events:
       CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
       CMAKE_FIND_USE_INSTALL_PREFIX: true
     names:
+      - "x86_64-w64-mingw32-tapi"
       - "tapi"
     candidate_directories:
       - "/usr/bin/"
+      - "/home/szym/.gemini/antigravity-ide/bin/"
       - "/home/szym/.local/share/mise/shims/"
       - "/home/szym/.local/share/omarchy/bin/"
       - "/usr/local/sbin/"
@@ -673,7 +711,18 @@ events:
       - "/usr/bin/core_perl/"
       - "/home/szym/.local/bin/"
     searched_directories:
+      - "/usr/bin/x86_64-w64-mingw32-tapi"
+      - "/home/szym/.gemini/antigravity-ide/bin/x86_64-w64-mingw32-tapi"
+      - "/home/szym/.local/share/mise/shims/x86_64-w64-mingw32-tapi"
+      - "/home/szym/.local/share/omarchy/bin/x86_64-w64-mingw32-tapi"
+      - "/usr/local/sbin/x86_64-w64-mingw32-tapi"
+      - "/usr/local/bin/x86_64-w64-mingw32-tapi"
+      - "/usr/bin/site_perl/x86_64-w64-mingw32-tapi"
+      - "/usr/bin/vendor_perl/x86_64-w64-mingw32-tapi"
+      - "/usr/bin/core_perl/x86_64-w64-mingw32-tapi"
+      - "/home/szym/.local/bin/x86_64-w64-mingw32-tapi"
       - "/usr/bin/tapi"
+      - "/home/szym/.gemini/antigravity-ide/bin/tapi"
       - "/home/szym/.local/share/mise/shims/tapi"
       - "/home/szym/.local/share/omarchy/bin/tapi"
       - "/usr/local/sbin/tapi"
@@ -685,6 +734,7 @@ events:
     found: false
     search_context:
       ENV{PATH}:
+        - "/home/szym/.gemini/antigravity-ide/bin"
         - "/home/szym/.local/share/mise/shims"
         - "/home/szym/.local/share/omarchy/bin"
         - "/usr/local/sbin"
@@ -694,6 +744,7 @@ events:
         - "/usr/bin/vendor_perl"
         - "/usr/bin/core_perl"
         - "/home/szym/.local/bin"
+      CMAKE_FIND_ROOT_PATH: "/usr/x86_64-w64-mingw32"
   -
     kind: "find-v1"
     backtrace:
@@ -712,12 +763,13 @@ events:
       CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
       CMAKE_FIND_USE_INSTALL_PREFIX: true
     names:
-      - "gcc-ar-16.1"
-      - "gcc-ar-16"
-      - "gcc-ar16"
-      - "gcc-ar"
+      - "x86_64-w64-mingw32-gcc-ar-16.1"
+      - "x86_64-w64-mingw32-gcc-ar-16"
+      - "x86_64-w64-mingw32-gcc-ar16"
+      - "x86_64-w64-mingw32-gcc-ar"
     candidate_directories:
       - "/usr/bin/"
+      - "/home/szym/.gemini/antigravity-ide/bin/"
       - "/home/szym/.local/share/mise/shims/"
       - "/home/szym/.local/share/omarchy/bin/"
       - "/usr/local/sbin/"
@@ -727,36 +779,40 @@ events:
       - "/usr/bin/core_perl/"
       - "/home/szym/.local/bin/"
     searched_directories:
-      - "/usr/bin/gcc-ar-16.1"
-      - "/home/szym/.local/share/mise/shims/gcc-ar-16.1"
-      - "/home/szym/.local/share/omarchy/bin/gcc-ar-16.1"
-      - "/usr/local/sbin/gcc-ar-16.1"
-      - "/usr/local/bin/gcc-ar-16.1"
-      - "/usr/bin/site_perl/gcc-ar-16.1"
-      - "/usr/bin/vendor_perl/gcc-ar-16.1"
-      - "/usr/bin/core_perl/gcc-ar-16.1"
-      - "/home/szym/.local/bin/gcc-ar-16.1"
-      - "/usr/bin/gcc-ar-16"
-      - "/home/szym/.local/share/mise/shims/gcc-ar-16"
-      - "/home/szym/.local/share/omarchy/bin/gcc-ar-16"
-      - "/usr/local/sbin/gcc-ar-16"
-      - "/usr/local/bin/gcc-ar-16"
-      - "/usr/bin/site_perl/gcc-ar-16"
-      - "/usr/bin/vendor_perl/gcc-ar-16"
-      - "/usr/bin/core_perl/gcc-ar-16"
-      - "/home/szym/.local/bin/gcc-ar-16"
-      - "/usr/bin/gcc-ar16"
-      - "/home/szym/.local/share/mise/shims/gcc-ar16"
-      - "/home/szym/.local/share/omarchy/bin/gcc-ar16"
-      - "/usr/local/sbin/gcc-ar16"
-      - "/usr/local/bin/gcc-ar16"
-      - "/usr/bin/site_perl/gcc-ar16"
-      - "/usr/bin/vendor_perl/gcc-ar16"
-      - "/usr/bin/core_perl/gcc-ar16"
-      - "/home/szym/.local/bin/gcc-ar16"
-    found: "/usr/bin/gcc-ar"
+      - "/usr/bin/x86_64-w64-mingw32-gcc-ar-16.1"
+      - "/home/szym/.gemini/antigravity-ide/bin/x86_64-w64-mingw32-gcc-ar-16.1"
+      - "/home/szym/.local/share/mise/shims/x86_64-w64-mingw32-gcc-ar-16.1"
+      - "/home/szym/.local/share/omarchy/bin/x86_64-w64-mingw32-gcc-ar-16.1"
+      - "/usr/local/sbin/x86_64-w64-mingw32-gcc-ar-16.1"
+      - "/usr/local/bin/x86_64-w64-mingw32-gcc-ar-16.1"
+      - "/usr/bin/site_perl/x86_64-w64-mingw32-gcc-ar-16.1"
+      - "/usr/bin/vendor_perl/x86_64-w64-mingw32-gcc-ar-16.1"
+      - "/usr/bin/core_perl/x86_64-w64-mingw32-gcc-ar-16.1"
+      - "/home/szym/.local/bin/x86_64-w64-mingw32-gcc-ar-16.1"
+      - "/usr/bin/x86_64-w64-mingw32-gcc-ar-16"
+      - "/home/szym/.gemini/antigravity-ide/bin/x86_64-w64-mingw32-gcc-ar-16"
+      - "/home/szym/.local/share/mise/shims/x86_64-w64-mingw32-gcc-ar-16"
+      - "/home/szym/.local/share/omarchy/bin/x86_64-w64-mingw32-gcc-ar-16"
+      - "/usr/local/sbin/x86_64-w64-mingw32-gcc-ar-16"
+      - "/usr/local/bin/x86_64-w64-mingw32-gcc-ar-16"
+      - "/usr/bin/site_perl/x86_64-w64-mingw32-gcc-ar-16"
+      - "/usr/bin/vendor_perl/x86_64-w64-mingw32-gcc-ar-16"
+      - "/usr/bin/core_perl/x86_64-w64-mingw32-gcc-ar-16"
+      - "/home/szym/.local/bin/x86_64-w64-mingw32-gcc-ar-16"
+      - "/usr/bin/x86_64-w64-mingw32-gcc-ar16"
+      - "/home/szym/.gemini/antigravity-ide/bin/x86_64-w64-mingw32-gcc-ar16"
+      - "/home/szym/.local/share/mise/shims/x86_64-w64-mingw32-gcc-ar16"
+      - "/home/szym/.local/share/omarchy/bin/x86_64-w64-mingw32-gcc-ar16"
+      - "/usr/local/sbin/x86_64-w64-mingw32-gcc-ar16"
+      - "/usr/local/bin/x86_64-w64-mingw32-gcc-ar16"
+      - "/usr/bin/site_perl/x86_64-w64-mingw32-gcc-ar16"
+      - "/usr/bin/vendor_perl/x86_64-w64-mingw32-gcc-ar16"
+      - "/usr/bin/core_perl/x86_64-w64-mingw32-gcc-ar16"
+      - "/home/szym/.local/bin/x86_64-w64-mingw32-gcc-ar16"
+    found: "/usr/bin/x86_64-w64-mingw32-gcc-ar"
     search_context:
       ENV{PATH}:
+        - "/home/szym/.gemini/antigravity-ide/bin"
         - "/home/szym/.local/share/mise/shims"
         - "/home/szym/.local/share/omarchy/bin"
         - "/usr/local/sbin"
@@ -766,6 +822,7 @@ events:
         - "/usr/bin/vendor_perl"
         - "/usr/bin/core_perl"
         - "/home/szym/.local/bin"
+      CMAKE_FIND_ROOT_PATH: "/usr/x86_64-w64-mingw32"
   -
     kind: "find-v1"
     backtrace:
@@ -784,12 +841,13 @@ events:
       CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
       CMAKE_FIND_USE_INSTALL_PREFIX: true
     names:
-      - "gcc-ranlib-16.1"
-      - "gcc-ranlib-16"
-      - "gcc-ranlib16"
-      - "gcc-ranlib"
+      - "x86_64-w64-mingw32-gcc-ranlib-16.1"
+      - "x86_64-w64-mingw32-gcc-ranlib-16"
+      - "x86_64-w64-mingw32-gcc-ranlib16"
+      - "x86_64-w64-mingw32-gcc-ranlib"
     candidate_directories:
       - "/usr/bin/"
+      - "/home/szym/.gemini/antigravity-ide/bin/"
       - "/home/szym/.local/share/mise/shims/"
       - "/home/szym/.local/share/omarchy/bin/"
       - "/usr/local/sbin/"
@@ -799,36 +857,40 @@ events:
       - "/usr/bin/core_perl/"
       - "/home/szym/.local/bin/"
     searched_directories:
-      - "/usr/bin/gcc-ranlib-16.1"
-      - "/home/szym/.local/share/mise/shims/gcc-ranlib-16.1"
-      - "/home/szym/.local/share/omarchy/bin/gcc-ranlib-16.1"
-      - "/usr/local/sbin/gcc-ranlib-16.1"
-      - "/usr/local/bin/gcc-ranlib-16.1"
-      - "/usr/bin/site_perl/gcc-ranlib-16.1"
-      - "/usr/bin/vendor_perl/gcc-ranlib-16.1"
-      - "/usr/bin/core_perl/gcc-ranlib-16.1"
-      - "/home/szym/.local/bin/gcc-ranlib-16.1"
-      - "/usr/bin/gcc-ranlib-16"
-      - "/home/szym/.local/share/mise/shims/gcc-ranlib-16"
-      - "/home/szym/.local/share/omarchy/bin/gcc-ranlib-16"
-      - "/usr/local/sbin/gcc-ranlib-16"
-      - "/usr/local/bin/gcc-ranlib-16"
-      - "/usr/bin/site_perl/gcc-ranlib-16"
-      - "/usr/bin/vendor_perl/gcc-ranlib-16"
-      - "/usr/bin/core_perl/gcc-ranlib-16"
-      - "/home/szym/.local/bin/gcc-ranlib-16"
-      - "/usr/bin/gcc-ranlib16"
-      - "/home/szym/.local/share/mise/shims/gcc-ranlib16"
-      - "/home/szym/.local/share/omarchy/bin/gcc-ranlib16"
-      - "/usr/local/sbin/gcc-ranlib16"
-      - "/usr/local/bin/gcc-ranlib16"
-      - "/usr/bin/site_perl/gcc-ranlib16"
-      - "/usr/bin/vendor_perl/gcc-ranlib16"
-      - "/usr/bin/core_perl/gcc-ranlib16"
-      - "/home/szym/.local/bin/gcc-ranlib16"
-    found: "/usr/bin/gcc-ranlib"
+      - "/usr/bin/x86_64-w64-mingw32-gcc-ranlib-16.1"
+      - "/home/szym/.gemini/antigravity-ide/bin/x86_64-w64-mingw32-gcc-ranlib-16.1"
+      - "/home/szym/.local/share/mise/shims/x86_64-w64-mingw32-gcc-ranlib-16.1"
+      - "/home/szym/.local/share/omarchy/bin/x86_64-w64-mingw32-gcc-ranlib-16.1"
+      - "/usr/local/sbin/x86_64-w64-mingw32-gcc-ranlib-16.1"
+      - "/usr/local/bin/x86_64-w64-mingw32-gcc-ranlib-16.1"
+      - "/usr/bin/site_perl/x86_64-w64-mingw32-gcc-ranlib-16.1"
+      - "/usr/bin/vendor_perl/x86_64-w64-mingw32-gcc-ranlib-16.1"
+      - "/usr/bin/core_perl/x86_64-w64-mingw32-gcc-ranlib-16.1"
+      - "/home/szym/.local/bin/x86_64-w64-mingw32-gcc-ranlib-16.1"
+      - "/usr/bin/x86_64-w64-mingw32-gcc-ranlib-16"
+      - "/home/szym/.gemini/antigravity-ide/bin/x86_64-w64-mingw32-gcc-ranlib-16"
+      - "/home/szym/.local/share/mise/shims/x86_64-w64-mingw32-gcc-ranlib-16"
+      - "/home/szym/.local/share/omarchy/bin/x86_64-w64-mingw32-gcc-ranlib-16"
+      - "/usr/local/sbin/x86_64-w64-mingw32-gcc-ranlib-16"
+      - "/usr/local/bin/x86_64-w64-mingw32-gcc-ranlib-16"
+      - "/usr/bin/site_perl/x86_64-w64-mingw32-gcc-ranlib-16"
+      - "/usr/bin/vendor_perl/x86_64-w64-mingw32-gcc-ranlib-16"
+      - "/usr/bin/core_perl/x86_64-w64-mingw32-gcc-ranlib-16"
+      - "/home/szym/.local/bin/x86_64-w64-mingw32-gcc-ranlib-16"
+      - "/usr/bin/x86_64-w64-mingw32-gcc-ranlib16"
+      - "/home/szym/.gemini/antigravity-ide/bin/x86_64-w64-mingw32-gcc-ranlib16"
+      - "/home/szym/.local/share/mise/shims/x86_64-w64-mingw32-gcc-ranlib16"
+      - "/home/szym/.local/share/omarchy/bin/x86_64-w64-mingw32-gcc-ranlib16"
+      - "/usr/local/sbin/x86_64-w64-mingw32-gcc-ranlib16"
+      - "/usr/local/bin/x86_64-w64-mingw32-gcc-ranlib16"
+      - "/usr/bin/site_perl/x86_64-w64-mingw32-gcc-ranlib16"
+      - "/usr/bin/vendor_perl/x86_64-w64-mingw32-gcc-ranlib16"
+      - "/usr/bin/core_perl/x86_64-w64-mingw32-gcc-ranlib16"
+      - "/home/szym/.local/bin/x86_64-w64-mingw32-gcc-ranlib16"
+    found: "/usr/bin/x86_64-w64-mingw32-gcc-ranlib"
     search_context:
       ENV{PATH}:
+        - "/home/szym/.gemini/antigravity-ide/bin"
         - "/home/szym/.local/share/mise/shims"
         - "/home/szym/.local/share/omarchy/bin"
         - "/usr/local/sbin"
@@ -838,6 +900,7 @@ events:
         - "/usr/bin/vendor_perl"
         - "/usr/bin/core_perl"
         - "/home/szym/.local/bin"
+      CMAKE_FIND_ROOT_PATH: "/usr/x86_64-w64-mingw32"
   -
     kind: "try_compile-v1"
     backtrace:
@@ -847,8 +910,8 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "/home/szym/repos/PrismLoader/build/CMakeFiles/CMakeScratch/TryCompile-OZMn86"
-      binary: "/home/szym/repos/PrismLoader/build/CMakeFiles/CMakeScratch/TryCompile-OZMn86"
+      source: "/home/szym/repos/PrismLoader/build/CMakeFiles/CMakeScratch/TryCompile-pf4Dg3"
+      binary: "/home/szym/repos/PrismLoader/build/CMakeFiles/CMakeScratch/TryCompile-pf4Dg3"
     cmakeVariables:
       CMAKE_CXX_FLAGS: ""
       CMAKE_CXX_FLAGS_DEBUG: "-g"
@@ -859,64 +922,65 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: '/home/szym/repos/PrismLoader/build/CMakeFiles/CMakeScratch/TryCompile-OZMn86'
+        Change Dir: '/home/szym/repos/PrismLoader/build/CMakeFiles/CMakeScratch/TryCompile-pf4Dg3'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_fc15e/fast
-        /usr/bin/make  -f CMakeFiles/cmTC_fc15e.dir/build.make CMakeFiles/cmTC_fc15e.dir/build
-        make[1]: Entering directory '/home/szym/repos/PrismLoader/build/CMakeFiles/CMakeScratch/TryCompile-OZMn86'
-        Building CXX object CMakeFiles/cmTC_fc15e.dir/CMakeCXXCompilerABI.cpp.o
-        /usr/bin/c++   -v -o CMakeFiles/cmTC_fc15e.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_dd1a5/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_dd1a5.dir/build.make CMakeFiles/cmTC_dd1a5.dir/build
+        make[1]: Entering directory '/home/szym/repos/PrismLoader/build/CMakeFiles/CMakeScratch/TryCompile-pf4Dg3'
+        Building CXX object CMakeFiles/cmTC_dd1a5.dir/CMakeCXXCompilerABI.cpp.obj
+        /usr/bin/x86_64-w64-mingw32-g++   -v -o CMakeFiles/cmTC_dd1a5.dir/CMakeCXXCompilerABI.cpp.obj -c /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp
         Using built-in specs.
-        COLLECT_GCC=/usr/bin/c++
-        Target: x86_64-pc-linux-gnu
-        Configured with: /build/gcc/src/gcc/configure --enable-languages=ada,c,c++,d,fortran,go,lto,m2,objc,obj-c++,rust,cobol --enable-bootstrap --prefix=/usr --libdir=/usr/lib --libexecdir=/usr/lib --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=https://gitlab.archlinux.org/archlinux/packaging/packages/gcc/-/issues --with-build-config=bootstrap-lto --with-linker-hash-style=gnu --with-system-zlib --enable-cet=auto --enable-checking=release --enable-clocale=gnu --enable-default-pie --enable-default-ssp --enable-gnu-indirect-function --enable-gnu-unique-object --enable-libstdcxx-backtrace --enable-link-serialization=1 --enable-linker-build-id --enable-lto --enable-multilib --enable-plugin --enable-shared --enable-threads=posix --disable-libssp --disable-libstdcxx-pch --disable-werror --disable-fixincludes
+        COLLECT_GCC=/usr/bin/x86_64-w64-mingw32-g++
+        Target: x86_64-w64-mingw32
+        Configured with: /build/mingw-w64-gcc/src/gcc/configure --prefix=/usr --libexecdir=/usr/lib --target=x86_64-w64-mingw32 --with-bugurl=https://bugs.archlinux.org/ --enable-languages=ada,c,c++,fortran,lto,objc,obj-c++ --enable-shared --enable-static --enable-threads=posix --enable-fully-dynamic-string --enable-libstdcxx-time=yes --enable-libstdcxx-filesystem-ts=yes --with-system-zlib --enable-cloog-backend=isl --enable-lto --enable-libgomp --disable-multilib --enable-checking=release --disable-sjlj-exceptions --with-dwarf2
         Thread model: posix
         Supported LTO compression algorithms: zlib zstd
-        gcc version 16.1.1 20260430 (GCC) 
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_fc15e.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_fc15e.dir/'
-         /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/cc1plus -quiet -v -D_GNU_SOURCE /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_fc15e.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -o /tmp/cccp4Qjz.s
-        GNU C++20 (GCC) version 16.1.1 20260430 (x86_64-pc-linux-gnu)
+        gcc version 16.1.0 (GCC) 
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_dd1a5.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_dd1a5.dir/'
+         /usr/lib/gcc/x86_64-w64-mingw32/16.1.0/cc1plus -quiet -v -D_REENTRANT /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_dd1a5.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -o /tmp/ccNdlRwJ.s
+        GNU C++20 (GCC) version 16.1.0 (x86_64-w64-mingw32)
         	compiled by GNU C version 16.1.1 20260430, GMP version 6.3.0, MPFR version 4.2.2, MPC version 1.4.1, isl version isl-0.27-GMP
         
         GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
-        ignoring nonexistent directory "/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/include-fixed"
-        ignoring nonexistent directory "/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../x86_64-pc-linux-gnu/include"
+        ignoring nonexistent directory "/usr/lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/sys-include"
         #include "..." search starts here:
         #include <...> search starts here:
-         /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../include/c++/16.1.1
-         /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../include/c++/16.1.1/x86_64-pc-linux-gnu
-         /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../include/c++/16.1.1/backward
-         /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/include
-         /usr/local/include
-         /usr/include
+         /usr/lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/include/c++/16.1.0
+         /usr/lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/include/c++/16.1.0/x86_64-w64-mingw32
+         /usr/lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/include/c++/16.1.0/backward
+         /usr/lib/gcc/x86_64-w64-mingw32/16.1.0/include
+         /usr/lib/gcc/x86_64-w64-mingw32/16.1.0/include-fixed
+         /usr/lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/include
         End of search list.
-        Compiler executable checksum: d47d0c990a24bc0dbaf3bd00656bd5f3
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_fc15e.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_fc15e.dir/'
-         as -v --64 -o CMakeFiles/cmTC_fc15e.dir/CMakeCXXCompilerABI.cpp.o /tmp/cccp4Qjz.s
-        GNU assembler version 2.46.0 (x86_64-pc-linux-gnu) using BFD version (GNU Binutils) 2.46.0
-        COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/
-        LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../:/lib/:/usr/lib/
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_fc15e.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_fc15e.dir/CMakeCXXCompilerABI.cpp.'
-        Linking CXX executable cmTC_fc15e
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_fc15e.dir/link.txt --verbose=1
+        Compiler executable checksum: 464f8e890391386675a724b2a21a3557
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_dd1a5.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_dd1a5.dir/'
+         /usr/lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/bin/as -v -o CMakeFiles/cmTC_dd1a5.dir/CMakeCXXCompilerABI.cpp.obj /tmp/ccNdlRwJ.s
+        GNU assembler version 2.46.0 (x86_64-w64-mingw32) using BFD version (GNU Binutils) 2.46.0.20260210
+        COMPILER_PATH=/usr/lib/gcc/x86_64-w64-mingw32/16.1.0/:/usr/lib/gcc/x86_64-w64-mingw32/16.1.0/:/usr/lib/gcc/x86_64-w64-mingw32/:/usr/lib/gcc/x86_64-w64-mingw32/16.1.0/:/usr/lib/gcc/x86_64-w64-mingw32/:/usr/lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/bin/
+        LIBRARY_PATH=/usr/lib/gcc/x86_64-w64-mingw32/16.1.0/:/usr/lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib/../lib/:/usr/lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib/
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_dd1a5.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_dd1a5.dir/CMakeCXXCompilerABI.cpp.'
+        Linking CXX executable cmTC_dd1a5.exe
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_dd1a5.dir/link.txt --verbose=1
         Using built-in specs.
-        COLLECT_GCC=/usr/bin/c++
-        COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/lto-wrapper
-        Target: x86_64-pc-linux-gnu
-        Configured with: /build/gcc/src/gcc/configure --enable-languages=ada,c,c++,d,fortran,go,lto,m2,objc,obj-c++,rust,cobol --enable-bootstrap --prefix=/usr --libdir=/usr/lib --libexecdir=/usr/lib --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=https://gitlab.archlinux.org/archlinux/packaging/packages/gcc/-/issues --with-build-config=bootstrap-lto --with-linker-hash-style=gnu --with-system-zlib --enable-cet=auto --enable-checking=release --enable-clocale=gnu --enable-default-pie --enable-default-ssp --enable-gnu-indirect-function --enable-gnu-unique-object --enable-libstdcxx-backtrace --enable-link-serialization=1 --enable-linker-build-id --enable-lto --enable-multilib --enable-plugin --enable-shared --enable-threads=posix --disable-libssp --disable-libstdcxx-pch --disable-werror --disable-fixincludes
+        COLLECT_GCC=/usr/bin/x86_64-w64-mingw32-g++
+        COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-w64-mingw32/16.1.0/lto-wrapper
+        Target: x86_64-w64-mingw32
+        Configured with: /build/mingw-w64-gcc/src/gcc/configure --prefix=/usr --libexecdir=/usr/lib --target=x86_64-w64-mingw32 --with-bugurl=https://bugs.archlinux.org/ --enable-languages=ada,c,c++,fortran,lto,objc,obj-c++ --enable-shared --enable-static --enable-threads=posix --enable-fully-dynamic-string --enable-libstdcxx-time=yes --enable-libstdcxx-filesystem-ts=yes --with-system-zlib --enable-cloog-backend=isl --enable-lto --enable-libgomp --disable-multilib --enable-checking=release --disable-sjlj-exceptions --with-dwarf2
         Thread model: posix
         Supported LTO compression algorithms: zlib zstd
-        gcc version 16.1.1 20260430 (GCC) 
-        COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/
-        LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../:/lib/:/usr/lib/
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_fc15e' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_fc15e.'
-         /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccHO8ul5.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-latomic_asneeded -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_fc15e /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_fc15e.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -latomic_asneeded -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib/crtn.o
-        collect2 version 16.1.1 20260430
-        /usr/bin/ld -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccHO8ul5.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-latomic_asneeded -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_fc15e /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_fc15e.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -latomic_asneeded -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib/crtn.o
-        GNU ld (GNU Binutils) 2.46.0
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_fc15e' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_fc15e.'
-        /usr/bin/c++  -v -Wl,-v CMakeFiles/cmTC_fc15e.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_fc15e
-        make[1]: Leaving directory '/home/szym/repos/PrismLoader/build/CMakeFiles/CMakeScratch/TryCompile-OZMn86'
+        gcc version 16.1.0 (GCC) 
+        COMPILER_PATH=/usr/lib/gcc/x86_64-w64-mingw32/16.1.0/:/usr/lib/gcc/x86_64-w64-mingw32/16.1.0/:/usr/lib/gcc/x86_64-w64-mingw32/:/usr/lib/gcc/x86_64-w64-mingw32/16.1.0/:/usr/lib/gcc/x86_64-w64-mingw32/:/usr/lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/bin/
+        LIBRARY_PATH=/usr/lib/gcc/x86_64-w64-mingw32/16.1.0/:/usr/lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib/../lib/:/usr/lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib/
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_dd1a5.exe' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_dd1a5.'
+         /usr/lib/gcc/x86_64-w64-mingw32/16.1.0/collect2 -plugin /usr/lib/gcc/x86_64-w64-mingw32/16.1.0/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-w64-mingw32/16.1.0/lto-wrapper -plugin-opt=-fresolution=/tmp/cczq5iYn.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_dd1a5.exe /usr/lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o /usr/lib/gcc/x86_64-w64-mingw32/16.1.0/crtbegin.o -L/usr/lib/gcc/x86_64-w64-mingw32/16.1.0 -L/usr/lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib/../lib -L/usr/lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib -v --whole-archive CMakeFiles/cmTC_dd1a5.dir/objects.a --no-whole-archive --out-implib libcmTC_dd1a5.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 /usr/lib/gcc/x86_64-w64-mingw32/16.1.0/crtend.o
+        collect2 version 16.1.0
+        /usr/lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/bin/ld -plugin /usr/lib/gcc/x86_64-w64-mingw32/16.1.0/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-w64-mingw32/16.1.0/lto-wrapper -plugin-opt=-fresolution=/tmp/cczq5iYn.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_dd1a5.exe /usr/lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o /usr/lib/gcc/x86_64-w64-mingw32/16.1.0/crtbegin.o -L/usr/lib/gcc/x86_64-w64-mingw32/16.1.0 -L/usr/lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib/../lib -L/usr/lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib -v --whole-archive CMakeFiles/cmTC_dd1a5.dir/objects.a --no-whole-archive --out-implib libcmTC_dd1a5.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 /usr/lib/gcc/x86_64-w64-mingw32/16.1.0/crtend.o
+        GNU ld (GNU Binutils) 2.46.0.20260210
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_dd1a5.exe' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_dd1a5.'
+        /usr/bin/cmake -E rm -f CMakeFiles/cmTC_dd1a5.dir/objects.a
+        /usr/bin/x86_64-w64-mingw32-ar qc CMakeFiles/cmTC_dd1a5.dir/objects.a @CMakeFiles/cmTC_dd1a5.dir/objects1.rsp
+        /usr/bin/x86_64-w64-mingw32-g++  -v -Wl,-v -Wl,--whole-archive CMakeFiles/cmTC_dd1a5.dir/objects.a -Wl,--no-whole-archive -o cmTC_dd1a5.exe -Wl,--out-implib,libcmTC_dd1a5.dll.a -Wl,--major-image-version,0,--minor-image-version,0
+        make[1]: Leaving directory '/home/szym/repos/PrismLoader/build/CMakeFiles/CMakeScratch/TryCompile-pf4Dg3'
         
       exitCode: 0
   -
@@ -929,20 +993,20 @@ events:
       Parsed CXX implicit include dir info: rv=done
         found start of include info
         found start of implicit include info
-          add: [/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../include/c++/16.1.1]
-          add: [/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../include/c++/16.1.1/x86_64-pc-linux-gnu]
-          add: [/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../include/c++/16.1.1/backward]
-          add: [/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/include]
-          add: [/usr/local/include]
-          add: [/usr/include]
+          add: [/usr/lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/include/c++/16.1.0]
+          add: [/usr/lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/include/c++/16.1.0/x86_64-w64-mingw32]
+          add: [/usr/lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/include/c++/16.1.0/backward]
+          add: [/usr/lib/gcc/x86_64-w64-mingw32/16.1.0/include]
+          add: [/usr/lib/gcc/x86_64-w64-mingw32/16.1.0/include-fixed]
+          add: [/usr/lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/include]
         end of search list found
-        collapse include dir [/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../include/c++/16.1.1] ==> [/usr/include/c++/16.1.1]
-        collapse include dir [/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../include/c++/16.1.1/x86_64-pc-linux-gnu] ==> [/usr/include/c++/16.1.1/x86_64-pc-linux-gnu]
-        collapse include dir [/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../include/c++/16.1.1/backward] ==> [/usr/include/c++/16.1.1/backward]
-        collapse include dir [/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/include] ==> [/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/include]
-        collapse include dir [/usr/local/include] ==> [/usr/local/include]
-        collapse include dir [/usr/include] ==> [/usr/include]
-        implicit include dirs: [/usr/include/c++/16.1.1;/usr/include/c++/16.1.1/x86_64-pc-linux-gnu;/usr/include/c++/16.1.1/backward;/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/include;/usr/local/include;/usr/include]
+        collapse include dir [/usr/lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/include/c++/16.1.0] ==> [/usr/x86_64-w64-mingw32/include/c++/16.1.0]
+        collapse include dir [/usr/lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/include/c++/16.1.0/x86_64-w64-mingw32] ==> [/usr/x86_64-w64-mingw32/include/c++/16.1.0/x86_64-w64-mingw32]
+        collapse include dir [/usr/lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/include/c++/16.1.0/backward] ==> [/usr/x86_64-w64-mingw32/include/c++/16.1.0/backward]
+        collapse include dir [/usr/lib/gcc/x86_64-w64-mingw32/16.1.0/include] ==> [/usr/lib/gcc/x86_64-w64-mingw32/16.1.0/include]
+        collapse include dir [/usr/lib/gcc/x86_64-w64-mingw32/16.1.0/include-fixed] ==> [/usr/lib/gcc/x86_64-w64-mingw32/16.1.0/include-fixed]
+        collapse include dir [/usr/lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/include] ==> [/usr/x86_64-w64-mingw32/include]
+        implicit include dirs: [/usr/x86_64-w64-mingw32/include/c++/16.1.0;/usr/x86_64-w64-mingw32/include/c++/16.1.0/x86_64-w64-mingw32;/usr/x86_64-w64-mingw32/include/c++/16.1.0/backward;/usr/lib/gcc/x86_64-w64-mingw32/16.1.0/include;/usr/lib/gcc/x86_64-w64-mingw32/16.1.0/include-fixed;/usr/x86_64-w64-mingw32/include]
       
       
   -
@@ -955,117 +1019,130 @@ events:
       Parsed CXX implicit link information:
         link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
         linker tool regex: [^[ 	]*(->|"|[0-9]+>[ 	-]*Build:[ 	0-9]+ ms[ 	]*)?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)))("|,| |$)]
-        ignore line: [Change Dir: '/home/szym/repos/PrismLoader/build/CMakeFiles/CMakeScratch/TryCompile-OZMn86']
+        ignore line: [Change Dir: '/home/szym/repos/PrismLoader/build/CMakeFiles/CMakeScratch/TryCompile-pf4Dg3']
         ignore line: []
-        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_fc15e/fast]
-        ignore line: [/usr/bin/make  -f CMakeFiles/cmTC_fc15e.dir/build.make CMakeFiles/cmTC_fc15e.dir/build]
-        ignore line: [make[1]: Entering directory '/home/szym/repos/PrismLoader/build/CMakeFiles/CMakeScratch/TryCompile-OZMn86']
-        ignore line: [Building CXX object CMakeFiles/cmTC_fc15e.dir/CMakeCXXCompilerABI.cpp.o]
-        ignore line: [/usr/bin/c++   -v -o CMakeFiles/cmTC_fc15e.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_dd1a5/fast]
+        ignore line: [/usr/bin/make  -f CMakeFiles/cmTC_dd1a5.dir/build.make CMakeFiles/cmTC_dd1a5.dir/build]
+        ignore line: [make[1]: Entering directory '/home/szym/repos/PrismLoader/build/CMakeFiles/CMakeScratch/TryCompile-pf4Dg3']
+        ignore line: [Building CXX object CMakeFiles/cmTC_dd1a5.dir/CMakeCXXCompilerABI.cpp.obj]
+        ignore line: [/usr/bin/x86_64-w64-mingw32-g++   -v -o CMakeFiles/cmTC_dd1a5.dir/CMakeCXXCompilerABI.cpp.obj -c /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
         ignore line: [Using built-in specs.]
-        ignore line: [COLLECT_GCC=/usr/bin/c++]
-        ignore line: [Target: x86_64-pc-linux-gnu]
-        ignore line: [Configured with: /build/gcc/src/gcc/configure --enable-languages=ada c c++ d fortran go lto m2 objc obj-c++ rust cobol --enable-bootstrap --prefix=/usr --libdir=/usr/lib --libexecdir=/usr/lib --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=https://gitlab.archlinux.org/archlinux/packaging/packages/gcc/-/issues --with-build-config=bootstrap-lto --with-linker-hash-style=gnu --with-system-zlib --enable-cet=auto --enable-checking=release --enable-clocale=gnu --enable-default-pie --enable-default-ssp --enable-gnu-indirect-function --enable-gnu-unique-object --enable-libstdcxx-backtrace --enable-link-serialization=1 --enable-linker-build-id --enable-lto --enable-multilib --enable-plugin --enable-shared --enable-threads=posix --disable-libssp --disable-libstdcxx-pch --disable-werror --disable-fixincludes]
+        ignore line: [COLLECT_GCC=/usr/bin/x86_64-w64-mingw32-g++]
+        ignore line: [Target: x86_64-w64-mingw32]
+        ignore line: [Configured with: /build/mingw-w64-gcc/src/gcc/configure --prefix=/usr --libexecdir=/usr/lib --target=x86_64-w64-mingw32 --with-bugurl=https://bugs.archlinux.org/ --enable-languages=ada c c++ fortran lto objc obj-c++ --enable-shared --enable-static --enable-threads=posix --enable-fully-dynamic-string --enable-libstdcxx-time=yes --enable-libstdcxx-filesystem-ts=yes --with-system-zlib --enable-cloog-backend=isl --enable-lto --enable-libgomp --disable-multilib --enable-checking=release --disable-sjlj-exceptions --with-dwarf2]
         ignore line: [Thread model: posix]
         ignore line: [Supported LTO compression algorithms: zlib zstd]
-        ignore line: [gcc version 16.1.1 20260430 (GCC) ]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_fc15e.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_fc15e.dir/']
-        ignore line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/cc1plus -quiet -v -D_GNU_SOURCE /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_fc15e.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -o /tmp/cccp4Qjz.s]
-        ignore line: [GNU C++20 (GCC) version 16.1.1 20260430 (x86_64-pc-linux-gnu)]
+        ignore line: [gcc version 16.1.0 (GCC) ]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_dd1a5.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_dd1a5.dir/']
+        ignore line: [ /usr/lib/gcc/x86_64-w64-mingw32/16.1.0/cc1plus -quiet -v -D_REENTRANT /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_dd1a5.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -o /tmp/ccNdlRwJ.s]
+        ignore line: [GNU C++20 (GCC) version 16.1.0 (x86_64-w64-mingw32)]
         ignore line: [	compiled by GNU C version 16.1.1 20260430  GMP version 6.3.0  MPFR version 4.2.2  MPC version 1.4.1  isl version isl-0.27-GMP]
         ignore line: []
         ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
-        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/include-fixed"]
-        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../x86_64-pc-linux-gnu/include"]
+        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/sys-include"]
         ignore line: [#include "..." search starts here:]
         ignore line: [#include <...> search starts here:]
-        ignore line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../include/c++/16.1.1]
-        ignore line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../include/c++/16.1.1/x86_64-pc-linux-gnu]
-        ignore line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../include/c++/16.1.1/backward]
-        ignore line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/include]
-        ignore line: [ /usr/local/include]
-        ignore line: [ /usr/include]
+        ignore line: [ /usr/lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/include/c++/16.1.0]
+        ignore line: [ /usr/lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/include/c++/16.1.0/x86_64-w64-mingw32]
+        ignore line: [ /usr/lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/include/c++/16.1.0/backward]
+        ignore line: [ /usr/lib/gcc/x86_64-w64-mingw32/16.1.0/include]
+        ignore line: [ /usr/lib/gcc/x86_64-w64-mingw32/16.1.0/include-fixed]
+        ignore line: [ /usr/lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/include]
         ignore line: [End of search list.]
-        ignore line: [Compiler executable checksum: d47d0c990a24bc0dbaf3bd00656bd5f3]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_fc15e.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_fc15e.dir/']
-        ignore line: [ as -v --64 -o CMakeFiles/cmTC_fc15e.dir/CMakeCXXCompilerABI.cpp.o /tmp/cccp4Qjz.s]
-        ignore line: [GNU assembler version 2.46.0 (x86_64-pc-linux-gnu) using BFD version (GNU Binutils) 2.46.0]
-        ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/]
-        ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../:/lib/:/usr/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_fc15e.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_fc15e.dir/CMakeCXXCompilerABI.cpp.']
-        ignore line: [Linking CXX executable cmTC_fc15e]
-        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_fc15e.dir/link.txt --verbose=1]
+        ignore line: [Compiler executable checksum: 464f8e890391386675a724b2a21a3557]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_dd1a5.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_dd1a5.dir/']
+        ignore line: [ /usr/lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/bin/as -v -o CMakeFiles/cmTC_dd1a5.dir/CMakeCXXCompilerABI.cpp.obj /tmp/ccNdlRwJ.s]
+        ignore line: [GNU assembler version 2.46.0 (x86_64-w64-mingw32) using BFD version (GNU Binutils) 2.46.0.20260210]
+        ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-w64-mingw32/16.1.0/:/usr/lib/gcc/x86_64-w64-mingw32/16.1.0/:/usr/lib/gcc/x86_64-w64-mingw32/:/usr/lib/gcc/x86_64-w64-mingw32/16.1.0/:/usr/lib/gcc/x86_64-w64-mingw32/:/usr/lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/bin/]
+        ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-w64-mingw32/16.1.0/:/usr/lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib/../lib/:/usr/lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_dd1a5.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_dd1a5.dir/CMakeCXXCompilerABI.cpp.']
+        ignore line: [Linking CXX executable cmTC_dd1a5.exe]
+        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_dd1a5.dir/link.txt --verbose=1]
         ignore line: [Using built-in specs.]
-        ignore line: [COLLECT_GCC=/usr/bin/c++]
-        ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/lto-wrapper]
-        ignore line: [Target: x86_64-pc-linux-gnu]
-        ignore line: [Configured with: /build/gcc/src/gcc/configure --enable-languages=ada c c++ d fortran go lto m2 objc obj-c++ rust cobol --enable-bootstrap --prefix=/usr --libdir=/usr/lib --libexecdir=/usr/lib --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=https://gitlab.archlinux.org/archlinux/packaging/packages/gcc/-/issues --with-build-config=bootstrap-lto --with-linker-hash-style=gnu --with-system-zlib --enable-cet=auto --enable-checking=release --enable-clocale=gnu --enable-default-pie --enable-default-ssp --enable-gnu-indirect-function --enable-gnu-unique-object --enable-libstdcxx-backtrace --enable-link-serialization=1 --enable-linker-build-id --enable-lto --enable-multilib --enable-plugin --enable-shared --enable-threads=posix --disable-libssp --disable-libstdcxx-pch --disable-werror --disable-fixincludes]
+        ignore line: [COLLECT_GCC=/usr/bin/x86_64-w64-mingw32-g++]
+        ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-w64-mingw32/16.1.0/lto-wrapper]
+        ignore line: [Target: x86_64-w64-mingw32]
+        ignore line: [Configured with: /build/mingw-w64-gcc/src/gcc/configure --prefix=/usr --libexecdir=/usr/lib --target=x86_64-w64-mingw32 --with-bugurl=https://bugs.archlinux.org/ --enable-languages=ada c c++ fortran lto objc obj-c++ --enable-shared --enable-static --enable-threads=posix --enable-fully-dynamic-string --enable-libstdcxx-time=yes --enable-libstdcxx-filesystem-ts=yes --with-system-zlib --enable-cloog-backend=isl --enable-lto --enable-libgomp --disable-multilib --enable-checking=release --disable-sjlj-exceptions --with-dwarf2]
         ignore line: [Thread model: posix]
         ignore line: [Supported LTO compression algorithms: zlib zstd]
-        ignore line: [gcc version 16.1.1 20260430 (GCC) ]
-        ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/]
-        ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../:/lib/:/usr/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_fc15e' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_fc15e.']
-        link line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccHO8ul5.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-latomic_asneeded -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_fc15e /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_fc15e.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -latomic_asneeded -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib/crtn.o]
-          arg [/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/collect2] ==> ignore
+        ignore line: [gcc version 16.1.0 (GCC) ]
+        ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-w64-mingw32/16.1.0/:/usr/lib/gcc/x86_64-w64-mingw32/16.1.0/:/usr/lib/gcc/x86_64-w64-mingw32/:/usr/lib/gcc/x86_64-w64-mingw32/16.1.0/:/usr/lib/gcc/x86_64-w64-mingw32/:/usr/lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/bin/]
+        ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-w64-mingw32/16.1.0/:/usr/lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib/../lib/:/usr/lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_dd1a5.exe' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_dd1a5.']
+        link line: [ /usr/lib/gcc/x86_64-w64-mingw32/16.1.0/collect2 -plugin /usr/lib/gcc/x86_64-w64-mingw32/16.1.0/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-w64-mingw32/16.1.0/lto-wrapper -plugin-opt=-fresolution=/tmp/cczq5iYn.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_dd1a5.exe /usr/lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o /usr/lib/gcc/x86_64-w64-mingw32/16.1.0/crtbegin.o -L/usr/lib/gcc/x86_64-w64-mingw32/16.1.0 -L/usr/lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib/../lib -L/usr/lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib -v --whole-archive CMakeFiles/cmTC_dd1a5.dir/objects.a --no-whole-archive --out-implib libcmTC_dd1a5.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 /usr/lib/gcc/x86_64-w64-mingw32/16.1.0/crtend.o]
+          arg [/usr/lib/gcc/x86_64-w64-mingw32/16.1.0/collect2] ==> ignore
           arg [-plugin] ==> ignore
-          arg [/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/liblto_plugin.so] ==> ignore
-          arg [-plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/lto-wrapper] ==> ignore
-          arg [-plugin-opt=-fresolution=/tmp/ccHO8ul5.res] ==> ignore
+          arg [/usr/lib/gcc/x86_64-w64-mingw32/16.1.0/liblto_plugin.so] ==> ignore
+          arg [-plugin-opt=/usr/lib/gcc/x86_64-w64-mingw32/16.1.0/lto-wrapper] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/cczq5iYn.res] ==> ignore
+          arg [-plugin-opt=-pass-through=-lmingw32] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
-          arg [-plugin-opt=-pass-through=-latomic_asneeded] ==> ignore
-          arg [-plugin-opt=-pass-through=-lc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lmingwex] ==> ignore
+          arg [-plugin-opt=-pass-through=-lmsvcrt] ==> ignore
+          arg [-plugin-opt=-pass-through=-lkernel32] ==> ignore
+          arg [-plugin-opt=-pass-through=-lpthread] ==> ignore
+          arg [-plugin-opt=-pass-through=-ladvapi32] ==> ignore
+          arg [-plugin-opt=-pass-through=-lshell32] ==> ignore
+          arg [-plugin-opt=-pass-through=-luser32] ==> ignore
+          arg [-plugin-opt=-pass-through=-lkernel32] ==> ignore
+          arg [-plugin-opt=-pass-through=-lmingw32] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
-          arg [--build-id] ==> ignore
-          arg [--eh-frame-hdr] ==> ignore
-          arg [--hash-style=gnu] ==> ignore
+          arg [-plugin-opt=-pass-through=-lmingwex] ==> ignore
+          arg [-plugin-opt=-pass-through=-lmsvcrt] ==> ignore
+          arg [-plugin-opt=-pass-through=-lkernel32] ==> ignore
           arg [-m] ==> ignore
-          arg [elf_x86_64] ==> ignore
-          arg [-dynamic-linker] ==> ignore
-          arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
-          arg [-pie] ==> ignore
+          arg [i386pep] ==> ignore
+          arg [-Bdynamic] ==> search dynamic
           arg [-o] ==> ignore
-          arg [cmTC_fc15e] ==> ignore
-          arg [/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib/Scrt1.o] ==> obj [/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib/Scrt1.o]
-          arg [/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib/crti.o] ==> obj [/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib/crti.o]
-          arg [/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/crtbeginS.o] ==> obj [/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/crtbeginS.o]
-          arg [-L/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1] ==> dir [/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1]
-          arg [-L/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib] ==> dir [/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib]
-          arg [-L/lib/../lib] ==> dir [/lib/../lib]
-          arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
-          arg [-L/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../..] ==> dir [/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../..]
-          arg [-L/lib] ==> dir [/lib]
-          arg [-L/usr/lib] ==> dir [/usr/lib]
+          arg [cmTC_dd1a5.exe] ==> ignore
+          arg [/usr/lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o] ==> obj [/usr/lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o]
+          arg [/usr/lib/gcc/x86_64-w64-mingw32/16.1.0/crtbegin.o] ==> obj [/usr/lib/gcc/x86_64-w64-mingw32/16.1.0/crtbegin.o]
+          arg [-L/usr/lib/gcc/x86_64-w64-mingw32/16.1.0] ==> dir [/usr/lib/gcc/x86_64-w64-mingw32/16.1.0]
+          arg [-L/usr/lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib/../lib] ==> dir [/usr/lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib/../lib]
+          arg [-L/usr/lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib] ==> dir [/usr/lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib]
           arg [-v] ==> ignore
-          arg [CMakeFiles/cmTC_fc15e.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+          arg [--whole-archive] ==> ignore
+          arg [CMakeFiles/cmTC_dd1a5.dir/objects.a] ==> ignore
+          arg [--no-whole-archive] ==> ignore
+          arg [--out-implib] ==> ignore
+          arg [libcmTC_dd1a5.dll.a] ==> ignore
+          arg [--major-image-version] ==> ignore
+          arg [0] ==> ignore
+          arg [--minor-image-version] ==> ignore
+          arg [0] ==> ignore
           arg [-lstdc++] ==> lib [stdc++]
-          arg [-lm] ==> lib [m]
+          arg [-lmingw32] ==> lib [mingw32]
           arg [-lgcc_s] ==> lib [gcc_s]
           arg [-lgcc] ==> lib [gcc]
-          arg [-latomic_asneeded] ==> lib [atomic_asneeded]
-          arg [-lc] ==> lib [c]
+          arg [-lmingwex] ==> lib [mingwex]
+          arg [-lmsvcrt] ==> lib [msvcrt]
+          arg [-lkernel32] ==> lib [kernel32]
+          arg [-lpthread] ==> lib [pthread]
+          arg [-ladvapi32] ==> lib [advapi32]
+          arg [-lshell32] ==> lib [shell32]
+          arg [-luser32] ==> lib [user32]
+          arg [-lkernel32] ==> lib [kernel32]
+          arg [-lmingw32] ==> lib [mingw32]
           arg [-lgcc_s] ==> lib [gcc_s]
           arg [-lgcc] ==> lib [gcc]
-          arg [/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/crtendS.o] ==> obj [/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/crtendS.o]
-          arg [/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib/crtn.o] ==> obj [/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib/crtn.o]
-        ignore line: [collect2 version 16.1.1 20260430]
-        ignore line: [/usr/bin/ld -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccHO8ul5.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-latomic_asneeded -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_fc15e /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_fc15e.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -latomic_asneeded -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib/crtn.o]
-        linker tool for 'CXX': /usr/bin/ld
-        collapse obj [/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib/Scrt1.o] ==> [/usr/lib/Scrt1.o]
-        collapse obj [/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib/crti.o] ==> [/usr/lib/crti.o]
-        collapse obj [/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib/crtn.o] ==> [/usr/lib/crtn.o]
-        collapse library dir [/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1] ==> [/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1]
-        collapse library dir [/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib] ==> [/usr/lib]
-        collapse library dir [/lib/../lib] ==> [/lib]
-        collapse library dir [/usr/lib/../lib] ==> [/usr/lib]
-        collapse library dir [/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../..] ==> [/usr/lib]
-        collapse library dir [/lib] ==> [/lib]
-        collapse library dir [/usr/lib] ==> [/usr/lib]
-        implicit libs: [stdc++;m;gcc_s;gcc;atomic_asneeded;c;gcc_s;gcc]
-        implicit objs: [/usr/lib/Scrt1.o;/usr/lib/crti.o;/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/crtbeginS.o;/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/crtendS.o;/usr/lib/crtn.o]
-        implicit dirs: [/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1;/usr/lib;/lib]
+          arg [-lmingwex] ==> lib [mingwex]
+          arg [-lmsvcrt] ==> lib [msvcrt]
+          arg [-lkernel32] ==> lib [kernel32]
+          arg [/usr/lib/gcc/x86_64-w64-mingw32/16.1.0/crtend.o] ==> obj [/usr/lib/gcc/x86_64-w64-mingw32/16.1.0/crtend.o]
+        ignore line: [collect2 version 16.1.0]
+        ignore line: [/usr/lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/bin/ld -plugin /usr/lib/gcc/x86_64-w64-mingw32/16.1.0/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-w64-mingw32/16.1.0/lto-wrapper -plugin-opt=-fresolution=/tmp/cczq5iYn.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_dd1a5.exe /usr/lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o /usr/lib/gcc/x86_64-w64-mingw32/16.1.0/crtbegin.o -L/usr/lib/gcc/x86_64-w64-mingw32/16.1.0 -L/usr/lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib/../lib -L/usr/lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib -v --whole-archive CMakeFiles/cmTC_dd1a5.dir/objects.a --no-whole-archive --out-implib libcmTC_dd1a5.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 /usr/lib/gcc/x86_64-w64-mingw32/16.1.0/crtend.o]
+        linker tool for 'CXX': /usr/lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/bin/ld
+        remove lib [msvcrt]
+        remove lib [msvcrt]
+        collapse obj [/usr/lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o] ==> [/usr/x86_64-w64-mingw32/lib/crt2.o]
+        collapse library dir [/usr/lib/gcc/x86_64-w64-mingw32/16.1.0] ==> [/usr/lib/gcc/x86_64-w64-mingw32/16.1.0]
+        collapse library dir [/usr/lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib/../lib] ==> [/usr/x86_64-w64-mingw32/lib]
+        collapse library dir [/usr/lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib] ==> [/usr/x86_64-w64-mingw32/lib]
+        implicit libs: [stdc++;mingw32;gcc_s;gcc;mingwex;kernel32;pthread;advapi32;shell32;user32;kernel32;mingw32;gcc_s;gcc;mingwex;kernel32]
+        implicit objs: [/usr/x86_64-w64-mingw32/lib/crt2.o;/usr/lib/gcc/x86_64-w64-mingw32/16.1.0/crtbegin.o;/usr/lib/gcc/x86_64-w64-mingw32/16.1.0/crtend.o]
+        implicit dirs: [/usr/lib/gcc/x86_64-w64-mingw32/16.1.0;/usr/x86_64-w64-mingw32/lib]
         implicit fwks: []
       
       
@@ -1077,6 +1154,6 @@ events:
       - "/usr/share/cmake/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
       - "CMakeLists.txt:2 (project)"
     message: |
-      Running the CXX compiler's linker: "/usr/bin/ld" "-v"
-      GNU ld (GNU Binutils) 2.46.0
+      Running the CXX compiler's linker: "/usr/lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/bin/ld" "-v"
+      GNU ld (GNU Binutils) 2.46.0.20260210
 ...

@@ -175,19 +175,6 @@ prismloader/fast:
 .PHONY : prismloader/fast
 
 #=============================================================================
-# Target rules for targets named prism
-
-# Build rule for target.
-prism: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 prism
-.PHONY : prism
-
-# fast build rule for target.
-prism/fast:
-	$(MAKE) $(MAKESILENT) -f prism/CMakeFiles/prism.dir/build.make prism/CMakeFiles/prism.dir/build
-.PHONY : prism/fast
-
-#=============================================================================
 # Target rules for targets named example_mod
 
 # Build rule for target.
@@ -213,7 +200,6 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... example_mod"
-	@echo "... prism"
 	@echo "... prismloader"
 .PHONY : help
 

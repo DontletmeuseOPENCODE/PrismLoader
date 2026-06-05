@@ -72,116 +72,157 @@ include loader/CMakeFiles/prismloader.dir/flags.make
 loader/CMakeFiles/prismloader.dir/codegen:
 .PHONY : loader/CMakeFiles/prismloader.dir/codegen
 
-loader/CMakeFiles/prismloader.dir/src/entry.cpp.o: loader/CMakeFiles/prismloader.dir/flags.make
-loader/CMakeFiles/prismloader.dir/src/entry.cpp.o: /home/szym/repos/PrismLoader/loader/src/entry.cpp
-loader/CMakeFiles/prismloader.dir/src/entry.cpp.o: loader/CMakeFiles/prismloader.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/szym/repos/PrismLoader/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object loader/CMakeFiles/prismloader.dir/src/entry.cpp.o"
-	cd /home/szym/repos/PrismLoader/build/loader && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT loader/CMakeFiles/prismloader.dir/src/entry.cpp.o -MF CMakeFiles/prismloader.dir/src/entry.cpp.o.d -o CMakeFiles/prismloader.dir/src/entry.cpp.o -c /home/szym/repos/PrismLoader/loader/src/entry.cpp
+loader/CMakeFiles/prismloader.dir/src/dllmain.cpp.obj: loader/CMakeFiles/prismloader.dir/flags.make
+loader/CMakeFiles/prismloader.dir/src/dllmain.cpp.obj: loader/CMakeFiles/prismloader.dir/includes_CXX.rsp
+loader/CMakeFiles/prismloader.dir/src/dllmain.cpp.obj: /home/szym/repos/PrismLoader/loader/src/dllmain.cpp
+loader/CMakeFiles/prismloader.dir/src/dllmain.cpp.obj: loader/CMakeFiles/prismloader.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/szym/repos/PrismLoader/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object loader/CMakeFiles/prismloader.dir/src/dllmain.cpp.obj"
+	cd /home/szym/repos/PrismLoader/build/loader && /usr/bin/x86_64-w64-mingw32-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT loader/CMakeFiles/prismloader.dir/src/dllmain.cpp.obj -MF CMakeFiles/prismloader.dir/src/dllmain.cpp.obj.d -o CMakeFiles/prismloader.dir/src/dllmain.cpp.obj -c /home/szym/repos/PrismLoader/loader/src/dllmain.cpp
 
-loader/CMakeFiles/prismloader.dir/src/entry.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/prismloader.dir/src/entry.cpp.i"
-	cd /home/szym/repos/PrismLoader/build/loader && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/szym/repos/PrismLoader/loader/src/entry.cpp > CMakeFiles/prismloader.dir/src/entry.cpp.i
+loader/CMakeFiles/prismloader.dir/src/dllmain.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/prismloader.dir/src/dllmain.cpp.i"
+	cd /home/szym/repos/PrismLoader/build/loader && /usr/bin/x86_64-w64-mingw32-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/szym/repos/PrismLoader/loader/src/dllmain.cpp > CMakeFiles/prismloader.dir/src/dllmain.cpp.i
 
-loader/CMakeFiles/prismloader.dir/src/entry.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/prismloader.dir/src/entry.cpp.s"
-	cd /home/szym/repos/PrismLoader/build/loader && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/szym/repos/PrismLoader/loader/src/entry.cpp -o CMakeFiles/prismloader.dir/src/entry.cpp.s
+loader/CMakeFiles/prismloader.dir/src/dllmain.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/prismloader.dir/src/dllmain.cpp.s"
+	cd /home/szym/repos/PrismLoader/build/loader && /usr/bin/x86_64-w64-mingw32-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/szym/repos/PrismLoader/loader/src/dllmain.cpp -o CMakeFiles/prismloader.dir/src/dllmain.cpp.s
 
-loader/CMakeFiles/prismloader.dir/src/hookengine.cpp.o: loader/CMakeFiles/prismloader.dir/flags.make
-loader/CMakeFiles/prismloader.dir/src/hookengine.cpp.o: /home/szym/repos/PrismLoader/loader/src/hookengine.cpp
-loader/CMakeFiles/prismloader.dir/src/hookengine.cpp.o: loader/CMakeFiles/prismloader.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/szym/repos/PrismLoader/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object loader/CMakeFiles/prismloader.dir/src/hookengine.cpp.o"
-	cd /home/szym/repos/PrismLoader/build/loader && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT loader/CMakeFiles/prismloader.dir/src/hookengine.cpp.o -MF CMakeFiles/prismloader.dir/src/hookengine.cpp.o.d -o CMakeFiles/prismloader.dir/src/hookengine.cpp.o -c /home/szym/repos/PrismLoader/loader/src/hookengine.cpp
+loader/CMakeFiles/prismloader.dir/src/hookengine.cpp.obj: loader/CMakeFiles/prismloader.dir/flags.make
+loader/CMakeFiles/prismloader.dir/src/hookengine.cpp.obj: loader/CMakeFiles/prismloader.dir/includes_CXX.rsp
+loader/CMakeFiles/prismloader.dir/src/hookengine.cpp.obj: /home/szym/repos/PrismLoader/loader/src/hookengine.cpp
+loader/CMakeFiles/prismloader.dir/src/hookengine.cpp.obj: loader/CMakeFiles/prismloader.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/szym/repos/PrismLoader/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object loader/CMakeFiles/prismloader.dir/src/hookengine.cpp.obj"
+	cd /home/szym/repos/PrismLoader/build/loader && /usr/bin/x86_64-w64-mingw32-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT loader/CMakeFiles/prismloader.dir/src/hookengine.cpp.obj -MF CMakeFiles/prismloader.dir/src/hookengine.cpp.obj.d -o CMakeFiles/prismloader.dir/src/hookengine.cpp.obj -c /home/szym/repos/PrismLoader/loader/src/hookengine.cpp
 
 loader/CMakeFiles/prismloader.dir/src/hookengine.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/prismloader.dir/src/hookengine.cpp.i"
-	cd /home/szym/repos/PrismLoader/build/loader && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/szym/repos/PrismLoader/loader/src/hookengine.cpp > CMakeFiles/prismloader.dir/src/hookengine.cpp.i
+	cd /home/szym/repos/PrismLoader/build/loader && /usr/bin/x86_64-w64-mingw32-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/szym/repos/PrismLoader/loader/src/hookengine.cpp > CMakeFiles/prismloader.dir/src/hookengine.cpp.i
 
 loader/CMakeFiles/prismloader.dir/src/hookengine.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/prismloader.dir/src/hookengine.cpp.s"
-	cd /home/szym/repos/PrismLoader/build/loader && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/szym/repos/PrismLoader/loader/src/hookengine.cpp -o CMakeFiles/prismloader.dir/src/hookengine.cpp.s
+	cd /home/szym/repos/PrismLoader/build/loader && /usr/bin/x86_64-w64-mingw32-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/szym/repos/PrismLoader/loader/src/hookengine.cpp -o CMakeFiles/prismloader.dir/src/hookengine.cpp.s
 
-loader/CMakeFiles/prismloader.dir/src/patternscan.cpp.o: loader/CMakeFiles/prismloader.dir/flags.make
-loader/CMakeFiles/prismloader.dir/src/patternscan.cpp.o: /home/szym/repos/PrismLoader/loader/src/patternscan.cpp
-loader/CMakeFiles/prismloader.dir/src/patternscan.cpp.o: loader/CMakeFiles/prismloader.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/szym/repos/PrismLoader/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object loader/CMakeFiles/prismloader.dir/src/patternscan.cpp.o"
-	cd /home/szym/repos/PrismLoader/build/loader && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT loader/CMakeFiles/prismloader.dir/src/patternscan.cpp.o -MF CMakeFiles/prismloader.dir/src/patternscan.cpp.o.d -o CMakeFiles/prismloader.dir/src/patternscan.cpp.o -c /home/szym/repos/PrismLoader/loader/src/patternscan.cpp
+loader/CMakeFiles/prismloader.dir/src/patternscan.cpp.obj: loader/CMakeFiles/prismloader.dir/flags.make
+loader/CMakeFiles/prismloader.dir/src/patternscan.cpp.obj: loader/CMakeFiles/prismloader.dir/includes_CXX.rsp
+loader/CMakeFiles/prismloader.dir/src/patternscan.cpp.obj: /home/szym/repos/PrismLoader/loader/src/patternscan.cpp
+loader/CMakeFiles/prismloader.dir/src/patternscan.cpp.obj: loader/CMakeFiles/prismloader.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/szym/repos/PrismLoader/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object loader/CMakeFiles/prismloader.dir/src/patternscan.cpp.obj"
+	cd /home/szym/repos/PrismLoader/build/loader && /usr/bin/x86_64-w64-mingw32-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT loader/CMakeFiles/prismloader.dir/src/patternscan.cpp.obj -MF CMakeFiles/prismloader.dir/src/patternscan.cpp.obj.d -o CMakeFiles/prismloader.dir/src/patternscan.cpp.obj -c /home/szym/repos/PrismLoader/loader/src/patternscan.cpp
 
 loader/CMakeFiles/prismloader.dir/src/patternscan.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/prismloader.dir/src/patternscan.cpp.i"
-	cd /home/szym/repos/PrismLoader/build/loader && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/szym/repos/PrismLoader/loader/src/patternscan.cpp > CMakeFiles/prismloader.dir/src/patternscan.cpp.i
+	cd /home/szym/repos/PrismLoader/build/loader && /usr/bin/x86_64-w64-mingw32-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/szym/repos/PrismLoader/loader/src/patternscan.cpp > CMakeFiles/prismloader.dir/src/patternscan.cpp.i
 
 loader/CMakeFiles/prismloader.dir/src/patternscan.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/prismloader.dir/src/patternscan.cpp.s"
-	cd /home/szym/repos/PrismLoader/build/loader && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/szym/repos/PrismLoader/loader/src/patternscan.cpp -o CMakeFiles/prismloader.dir/src/patternscan.cpp.s
+	cd /home/szym/repos/PrismLoader/build/loader && /usr/bin/x86_64-w64-mingw32-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/szym/repos/PrismLoader/loader/src/patternscan.cpp -o CMakeFiles/prismloader.dir/src/patternscan.cpp.s
 
-loader/CMakeFiles/prismloader.dir/src/modloader.cpp.o: loader/CMakeFiles/prismloader.dir/flags.make
-loader/CMakeFiles/prismloader.dir/src/modloader.cpp.o: /home/szym/repos/PrismLoader/loader/src/modloader.cpp
-loader/CMakeFiles/prismloader.dir/src/modloader.cpp.o: loader/CMakeFiles/prismloader.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/szym/repos/PrismLoader/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object loader/CMakeFiles/prismloader.dir/src/modloader.cpp.o"
-	cd /home/szym/repos/PrismLoader/build/loader && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT loader/CMakeFiles/prismloader.dir/src/modloader.cpp.o -MF CMakeFiles/prismloader.dir/src/modloader.cpp.o.d -o CMakeFiles/prismloader.dir/src/modloader.cpp.o -c /home/szym/repos/PrismLoader/loader/src/modloader.cpp
+loader/CMakeFiles/prismloader.dir/src/modloader.cpp.obj: loader/CMakeFiles/prismloader.dir/flags.make
+loader/CMakeFiles/prismloader.dir/src/modloader.cpp.obj: loader/CMakeFiles/prismloader.dir/includes_CXX.rsp
+loader/CMakeFiles/prismloader.dir/src/modloader.cpp.obj: /home/szym/repos/PrismLoader/loader/src/modloader.cpp
+loader/CMakeFiles/prismloader.dir/src/modloader.cpp.obj: loader/CMakeFiles/prismloader.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/szym/repos/PrismLoader/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object loader/CMakeFiles/prismloader.dir/src/modloader.cpp.obj"
+	cd /home/szym/repos/PrismLoader/build/loader && /usr/bin/x86_64-w64-mingw32-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT loader/CMakeFiles/prismloader.dir/src/modloader.cpp.obj -MF CMakeFiles/prismloader.dir/src/modloader.cpp.obj.d -o CMakeFiles/prismloader.dir/src/modloader.cpp.obj -c /home/szym/repos/PrismLoader/loader/src/modloader.cpp
 
 loader/CMakeFiles/prismloader.dir/src/modloader.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/prismloader.dir/src/modloader.cpp.i"
-	cd /home/szym/repos/PrismLoader/build/loader && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/szym/repos/PrismLoader/loader/src/modloader.cpp > CMakeFiles/prismloader.dir/src/modloader.cpp.i
+	cd /home/szym/repos/PrismLoader/build/loader && /usr/bin/x86_64-w64-mingw32-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/szym/repos/PrismLoader/loader/src/modloader.cpp > CMakeFiles/prismloader.dir/src/modloader.cpp.i
 
 loader/CMakeFiles/prismloader.dir/src/modloader.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/prismloader.dir/src/modloader.cpp.s"
-	cd /home/szym/repos/PrismLoader/build/loader && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/szym/repos/PrismLoader/loader/src/modloader.cpp -o CMakeFiles/prismloader.dir/src/modloader.cpp.s
+	cd /home/szym/repos/PrismLoader/build/loader && /usr/bin/x86_64-w64-mingw32-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/szym/repos/PrismLoader/loader/src/modloader.cpp -o CMakeFiles/prismloader.dir/src/modloader.cpp.s
 
-loader/CMakeFiles/prismloader.dir/src/gdinit.cpp.o: loader/CMakeFiles/prismloader.dir/flags.make
-loader/CMakeFiles/prismloader.dir/src/gdinit.cpp.o: /home/szym/repos/PrismLoader/loader/src/gdinit.cpp
-loader/CMakeFiles/prismloader.dir/src/gdinit.cpp.o: loader/CMakeFiles/prismloader.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/szym/repos/PrismLoader/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object loader/CMakeFiles/prismloader.dir/src/gdinit.cpp.o"
-	cd /home/szym/repos/PrismLoader/build/loader && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT loader/CMakeFiles/prismloader.dir/src/gdinit.cpp.o -MF CMakeFiles/prismloader.dir/src/gdinit.cpp.o.d -o CMakeFiles/prismloader.dir/src/gdinit.cpp.o -c /home/szym/repos/PrismLoader/loader/src/gdinit.cpp
+loader/CMakeFiles/prismloader.dir/src/gdinit.cpp.obj: loader/CMakeFiles/prismloader.dir/flags.make
+loader/CMakeFiles/prismloader.dir/src/gdinit.cpp.obj: loader/CMakeFiles/prismloader.dir/includes_CXX.rsp
+loader/CMakeFiles/prismloader.dir/src/gdinit.cpp.obj: /home/szym/repos/PrismLoader/loader/src/gdinit.cpp
+loader/CMakeFiles/prismloader.dir/src/gdinit.cpp.obj: loader/CMakeFiles/prismloader.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/szym/repos/PrismLoader/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object loader/CMakeFiles/prismloader.dir/src/gdinit.cpp.obj"
+	cd /home/szym/repos/PrismLoader/build/loader && /usr/bin/x86_64-w64-mingw32-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT loader/CMakeFiles/prismloader.dir/src/gdinit.cpp.obj -MF CMakeFiles/prismloader.dir/src/gdinit.cpp.obj.d -o CMakeFiles/prismloader.dir/src/gdinit.cpp.obj -c /home/szym/repos/PrismLoader/loader/src/gdinit.cpp
 
 loader/CMakeFiles/prismloader.dir/src/gdinit.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/prismloader.dir/src/gdinit.cpp.i"
-	cd /home/szym/repos/PrismLoader/build/loader && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/szym/repos/PrismLoader/loader/src/gdinit.cpp > CMakeFiles/prismloader.dir/src/gdinit.cpp.i
+	cd /home/szym/repos/PrismLoader/build/loader && /usr/bin/x86_64-w64-mingw32-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/szym/repos/PrismLoader/loader/src/gdinit.cpp > CMakeFiles/prismloader.dir/src/gdinit.cpp.i
 
 loader/CMakeFiles/prismloader.dir/src/gdinit.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/prismloader.dir/src/gdinit.cpp.s"
-	cd /home/szym/repos/PrismLoader/build/loader && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/szym/repos/PrismLoader/loader/src/gdinit.cpp -o CMakeFiles/prismloader.dir/src/gdinit.cpp.s
+	cd /home/szym/repos/PrismLoader/build/loader && /usr/bin/x86_64-w64-mingw32-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/szym/repos/PrismLoader/loader/src/gdinit.cpp -o CMakeFiles/prismloader.dir/src/gdinit.cpp.s
 
-loader/CMakeFiles/prismloader.dir/src/ui/modmenu.cpp.o: loader/CMakeFiles/prismloader.dir/flags.make
-loader/CMakeFiles/prismloader.dir/src/ui/modmenu.cpp.o: /home/szym/repos/PrismLoader/loader/src/ui/modmenu.cpp
-loader/CMakeFiles/prismloader.dir/src/ui/modmenu.cpp.o: loader/CMakeFiles/prismloader.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/szym/repos/PrismLoader/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object loader/CMakeFiles/prismloader.dir/src/ui/modmenu.cpp.o"
-	cd /home/szym/repos/PrismLoader/build/loader && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT loader/CMakeFiles/prismloader.dir/src/ui/modmenu.cpp.o -MF CMakeFiles/prismloader.dir/src/ui/modmenu.cpp.o.d -o CMakeFiles/prismloader.dir/src/ui/modmenu.cpp.o -c /home/szym/repos/PrismLoader/loader/src/ui/modmenu.cpp
+loader/CMakeFiles/prismloader.dir/src/loader.cpp.obj: loader/CMakeFiles/prismloader.dir/flags.make
+loader/CMakeFiles/prismloader.dir/src/loader.cpp.obj: loader/CMakeFiles/prismloader.dir/includes_CXX.rsp
+loader/CMakeFiles/prismloader.dir/src/loader.cpp.obj: /home/szym/repos/PrismLoader/loader/src/loader.cpp
+loader/CMakeFiles/prismloader.dir/src/loader.cpp.obj: loader/CMakeFiles/prismloader.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/szym/repos/PrismLoader/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object loader/CMakeFiles/prismloader.dir/src/loader.cpp.obj"
+	cd /home/szym/repos/PrismLoader/build/loader && /usr/bin/x86_64-w64-mingw32-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT loader/CMakeFiles/prismloader.dir/src/loader.cpp.obj -MF CMakeFiles/prismloader.dir/src/loader.cpp.obj.d -o CMakeFiles/prismloader.dir/src/loader.cpp.obj -c /home/szym/repos/PrismLoader/loader/src/loader.cpp
+
+loader/CMakeFiles/prismloader.dir/src/loader.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/prismloader.dir/src/loader.cpp.i"
+	cd /home/szym/repos/PrismLoader/build/loader && /usr/bin/x86_64-w64-mingw32-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/szym/repos/PrismLoader/loader/src/loader.cpp > CMakeFiles/prismloader.dir/src/loader.cpp.i
+
+loader/CMakeFiles/prismloader.dir/src/loader.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/prismloader.dir/src/loader.cpp.s"
+	cd /home/szym/repos/PrismLoader/build/loader && /usr/bin/x86_64-w64-mingw32-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/szym/repos/PrismLoader/loader/src/loader.cpp -o CMakeFiles/prismloader.dir/src/loader.cpp.s
+
+loader/CMakeFiles/prismloader.dir/src/ui/modmenu.cpp.obj: loader/CMakeFiles/prismloader.dir/flags.make
+loader/CMakeFiles/prismloader.dir/src/ui/modmenu.cpp.obj: loader/CMakeFiles/prismloader.dir/includes_CXX.rsp
+loader/CMakeFiles/prismloader.dir/src/ui/modmenu.cpp.obj: /home/szym/repos/PrismLoader/loader/src/ui/modmenu.cpp
+loader/CMakeFiles/prismloader.dir/src/ui/modmenu.cpp.obj: loader/CMakeFiles/prismloader.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/szym/repos/PrismLoader/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object loader/CMakeFiles/prismloader.dir/src/ui/modmenu.cpp.obj"
+	cd /home/szym/repos/PrismLoader/build/loader && /usr/bin/x86_64-w64-mingw32-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT loader/CMakeFiles/prismloader.dir/src/ui/modmenu.cpp.obj -MF CMakeFiles/prismloader.dir/src/ui/modmenu.cpp.obj.d -o CMakeFiles/prismloader.dir/src/ui/modmenu.cpp.obj -c /home/szym/repos/PrismLoader/loader/src/ui/modmenu.cpp
 
 loader/CMakeFiles/prismloader.dir/src/ui/modmenu.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/prismloader.dir/src/ui/modmenu.cpp.i"
-	cd /home/szym/repos/PrismLoader/build/loader && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/szym/repos/PrismLoader/loader/src/ui/modmenu.cpp > CMakeFiles/prismloader.dir/src/ui/modmenu.cpp.i
+	cd /home/szym/repos/PrismLoader/build/loader && /usr/bin/x86_64-w64-mingw32-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/szym/repos/PrismLoader/loader/src/ui/modmenu.cpp > CMakeFiles/prismloader.dir/src/ui/modmenu.cpp.i
 
 loader/CMakeFiles/prismloader.dir/src/ui/modmenu.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/prismloader.dir/src/ui/modmenu.cpp.s"
-	cd /home/szym/repos/PrismLoader/build/loader && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/szym/repos/PrismLoader/loader/src/ui/modmenu.cpp -o CMakeFiles/prismloader.dir/src/ui/modmenu.cpp.s
+	cd /home/szym/repos/PrismLoader/build/loader && /usr/bin/x86_64-w64-mingw32-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/szym/repos/PrismLoader/loader/src/ui/modmenu.cpp -o CMakeFiles/prismloader.dir/src/ui/modmenu.cpp.s
+
+loader/CMakeFiles/prismloader.dir/src/log.cpp.obj: loader/CMakeFiles/prismloader.dir/flags.make
+loader/CMakeFiles/prismloader.dir/src/log.cpp.obj: loader/CMakeFiles/prismloader.dir/includes_CXX.rsp
+loader/CMakeFiles/prismloader.dir/src/log.cpp.obj: /home/szym/repos/PrismLoader/loader/src/log.cpp
+loader/CMakeFiles/prismloader.dir/src/log.cpp.obj: loader/CMakeFiles/prismloader.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/szym/repos/PrismLoader/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object loader/CMakeFiles/prismloader.dir/src/log.cpp.obj"
+	cd /home/szym/repos/PrismLoader/build/loader && /usr/bin/x86_64-w64-mingw32-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT loader/CMakeFiles/prismloader.dir/src/log.cpp.obj -MF CMakeFiles/prismloader.dir/src/log.cpp.obj.d -o CMakeFiles/prismloader.dir/src/log.cpp.obj -c /home/szym/repos/PrismLoader/loader/src/log.cpp
+
+loader/CMakeFiles/prismloader.dir/src/log.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/prismloader.dir/src/log.cpp.i"
+	cd /home/szym/repos/PrismLoader/build/loader && /usr/bin/x86_64-w64-mingw32-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/szym/repos/PrismLoader/loader/src/log.cpp > CMakeFiles/prismloader.dir/src/log.cpp.i
+
+loader/CMakeFiles/prismloader.dir/src/log.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/prismloader.dir/src/log.cpp.s"
+	cd /home/szym/repos/PrismLoader/build/loader && /usr/bin/x86_64-w64-mingw32-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/szym/repos/PrismLoader/loader/src/log.cpp -o CMakeFiles/prismloader.dir/src/log.cpp.s
 
 # Object files for target prismloader
 prismloader_OBJECTS = \
-"CMakeFiles/prismloader.dir/src/entry.cpp.o" \
-"CMakeFiles/prismloader.dir/src/hookengine.cpp.o" \
-"CMakeFiles/prismloader.dir/src/patternscan.cpp.o" \
-"CMakeFiles/prismloader.dir/src/modloader.cpp.o" \
-"CMakeFiles/prismloader.dir/src/gdinit.cpp.o" \
-"CMakeFiles/prismloader.dir/src/ui/modmenu.cpp.o"
+"CMakeFiles/prismloader.dir/src/dllmain.cpp.obj" \
+"CMakeFiles/prismloader.dir/src/hookengine.cpp.obj" \
+"CMakeFiles/prismloader.dir/src/patternscan.cpp.obj" \
+"CMakeFiles/prismloader.dir/src/modloader.cpp.obj" \
+"CMakeFiles/prismloader.dir/src/gdinit.cpp.obj" \
+"CMakeFiles/prismloader.dir/src/loader.cpp.obj" \
+"CMakeFiles/prismloader.dir/src/ui/modmenu.cpp.obj" \
+"CMakeFiles/prismloader.dir/src/log.cpp.obj"
 
 # External object files for target prismloader
 prismloader_EXTERNAL_OBJECTS =
 
-loader/libprismloader.so: loader/CMakeFiles/prismloader.dir/src/entry.cpp.o
-loader/libprismloader.so: loader/CMakeFiles/prismloader.dir/src/hookengine.cpp.o
-loader/libprismloader.so: loader/CMakeFiles/prismloader.dir/src/patternscan.cpp.o
-loader/libprismloader.so: loader/CMakeFiles/prismloader.dir/src/modloader.cpp.o
-loader/libprismloader.so: loader/CMakeFiles/prismloader.dir/src/gdinit.cpp.o
-loader/libprismloader.so: loader/CMakeFiles/prismloader.dir/src/ui/modmenu.cpp.o
-loader/libprismloader.so: loader/CMakeFiles/prismloader.dir/build.make
-loader/libprismloader.so: loader/CMakeFiles/prismloader.dir/compiler_depend.ts
-loader/libprismloader.so: loader/CMakeFiles/prismloader.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/szym/repos/PrismLoader/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX shared library libprismloader.so"
+loader/libprismloader.dll: loader/CMakeFiles/prismloader.dir/src/dllmain.cpp.obj
+loader/libprismloader.dll: loader/CMakeFiles/prismloader.dir/src/hookengine.cpp.obj
+loader/libprismloader.dll: loader/CMakeFiles/prismloader.dir/src/patternscan.cpp.obj
+loader/libprismloader.dll: loader/CMakeFiles/prismloader.dir/src/modloader.cpp.obj
+loader/libprismloader.dll: loader/CMakeFiles/prismloader.dir/src/gdinit.cpp.obj
+loader/libprismloader.dll: loader/CMakeFiles/prismloader.dir/src/loader.cpp.obj
+loader/libprismloader.dll: loader/CMakeFiles/prismloader.dir/src/ui/modmenu.cpp.obj
+loader/libprismloader.dll: loader/CMakeFiles/prismloader.dir/src/log.cpp.obj
+loader/libprismloader.dll: loader/CMakeFiles/prismloader.dir/build.make
+loader/libprismloader.dll: loader/CMakeFiles/prismloader.dir/linkLibs.rsp
+loader/libprismloader.dll: loader/CMakeFiles/prismloader.dir/objects1.rsp
+loader/libprismloader.dll: loader/CMakeFiles/prismloader.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/szym/repos/PrismLoader/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX shared library libprismloader.dll"
 	cd /home/szym/repos/PrismLoader/build/loader && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/prismloader.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-loader/CMakeFiles/prismloader.dir/build: loader/libprismloader.so
+loader/CMakeFiles/prismloader.dir/build: loader/libprismloader.dll
 .PHONY : loader/CMakeFiles/prismloader.dir/build
 
 loader/CMakeFiles/prismloader.dir/clean:

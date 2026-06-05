@@ -6,5 +6,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 
 add_subdirectory(loader)
-add_subdirectory(prism)
+if(NOT WIN32)
+    add_subdirectory(prism)
+endif()
 add_subdirectory(mods/example)

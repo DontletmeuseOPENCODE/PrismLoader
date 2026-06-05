@@ -3,7 +3,6 @@
 	[
 		"/home/szym/repos/PrismLoader/build/cmake_install.cmake",
 		"/home/szym/repos/PrismLoader/build/loader/cmake_install.cmake",
-		"/home/szym/repos/PrismLoader/build/prism/cmake_install.cmake",
 		"/home/szym/repos/PrismLoader/build/mods/example/cmake_install.cmake"
 	],
 	"Parallel" : false

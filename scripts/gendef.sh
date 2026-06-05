@@ -21,14 +21,18 @@ x86_64-w64-mingw32-objdump -p "$DLL_PATH" | awk -v fwd="$FORWARD_NAME" '
     /^\[Ordinal\/Name Pointer\] Table/ { in_names = 1; next }
     in_names && /^$/ { in_names = 0 }
     in_names && /^\s+\[/ {
-        name_start = match($0, /[0-9a-f]{4}\s+(.+)/, arr)
-        if (arr[1] != "") {
-            name = arr[1]
-            gsub(/^ +| +$/, "", name)
+        name = $NF
+        gsub(/[ \t\r\n]+$/, "", name)
+        if (name != "") {
             printf "  %s = %s.%s\n", name, fwd, name
         }
     }
 ' >> "$OUTPUT"
+
+echo "  prism_hook" >> "$OUTPUT"
+echo "  prism_unhook" >> "$OUTPUT"
+echo "  prism_resolve_address" >> "$OUTPUT"
+echo "  prism_log" >> "$OUTPUT"
 
 COUNT=$(grep -c "^  " "$OUTPUT" || true)
 echo "Generated $OUTPUT with $COUNT exports (forward to %s)"

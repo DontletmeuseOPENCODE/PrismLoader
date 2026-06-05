@@ -42,3 +42,11 @@ void logMsg(const char* fmt, ...) {
 }
 
 } // namespace prism
+
+#include <Prism/Log.hpp>
+
+extern "C" {
+__declspec(dllexport) void prism_log(int level, const char* mod, const char* msg) {
+    prism::logMsg("[Prism][%s][%s] %s", prism::logLevelName(static_cast<prism::LogLevel>(level)), mod, msg);
+}
+}

@@ -1,9 +1,9 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/example_mod.dir/link.d"
-  "CMakeFiles/example_mod.dir/src/main.cpp.o"
-  "CMakeFiles/example_mod.dir/src/main.cpp.o.d"
+  "CMakeFiles/example_mod.dir/src/main.cpp.obj"
+  "CMakeFiles/example_mod.dir/src/main.cpp.obj.d"
+  "libexample_mod.dll"
+  "libexample_mod.dll.a"
   "libexample_mod.pdb"
-  "libexample_mod.so"
 )
 
 # Per-language clean rules from dependency scanning.

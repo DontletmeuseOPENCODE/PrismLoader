@@ -2,6 +2,14 @@
 #include <cstdio>
 #include <utility>
 
+#ifndef PRISM_BUILD_LOADER
+#ifdef _WIN32
+#include <windows.h>
+#else
+#include <dlfcn.h>
+#endif
+#endif
+
 namespace prism {
 
 enum class LogLevel {
@@ -21,10 +29,35 @@ inline const char* logLevelName(LogLevel level) {
     return "UNKNOWN";
 }
 
+#ifndef PRISM_BUILD_LOADER
+
+inline void* getLogLoaderProc(const char* name) {
+#ifdef _WIN32
+    HMODULE h = GetModuleHandleA("pthreadVCE3.dll");
+    if (!h) h = GetModuleHandleA("pthreadVCE3_o.dll");
+    if (!h) h = GetModuleHandleA("prismproxy.dll");
+    if (!h) return nullptr;
+    return (void*)GetProcAddress(h, name);
+#else
+    return dlsym(RTLD_DEFAULT, name);
+#endif
+}
+#endif
+
 inline void log(LogLevel level, const char* mod, const char* fmt, auto... args) {
-    std::fprintf(stderr, "[Prism][%s][%s] ", logLevelName(level), mod);
-    std::fprintf(stderr, fmt, args...);
-    std::fputc('\n', stderr);
+    char msg[1024];
+    std::snprintf(msg, sizeof(msg), fmt, args...);
+
+#ifndef PRISM_BUILD_LOADER
+    typedef void (*LogFn)(int, const char*, const char*);
+    static LogFn fn = (LogFn)getLogLoaderProc("prism_log");
+    if (fn) {
+        fn(static_cast<int>(level), mod, msg);
+        return;
+    }
+#endif
+
+    std::fprintf(stderr, "[Prism][%s][%s] %s\n", logLevelName(level), mod, msg);
 }
 
 } // namespace prism

@@ -72,36 +72,38 @@ include mods/example/CMakeFiles/example_mod.dir/flags.make
 mods/example/CMakeFiles/example_mod.dir/codegen:
 .PHONY : mods/example/CMakeFiles/example_mod.dir/codegen
 
-mods/example/CMakeFiles/example_mod.dir/src/main.cpp.o: mods/example/CMakeFiles/example_mod.dir/flags.make
-mods/example/CMakeFiles/example_mod.dir/src/main.cpp.o: /home/szym/repos/PrismLoader/mods/example/src/main.cpp
-mods/example/CMakeFiles/example_mod.dir/src/main.cpp.o: mods/example/CMakeFiles/example_mod.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/szym/repos/PrismLoader/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object mods/example/CMakeFiles/example_mod.dir/src/main.cpp.o"
-	cd /home/szym/repos/PrismLoader/build/mods/example && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT mods/example/CMakeFiles/example_mod.dir/src/main.cpp.o -MF CMakeFiles/example_mod.dir/src/main.cpp.o.d -o CMakeFiles/example_mod.dir/src/main.cpp.o -c /home/szym/repos/PrismLoader/mods/example/src/main.cpp
+mods/example/CMakeFiles/example_mod.dir/src/main.cpp.obj: mods/example/CMakeFiles/example_mod.dir/flags.make
+mods/example/CMakeFiles/example_mod.dir/src/main.cpp.obj: mods/example/CMakeFiles/example_mod.dir/includes_CXX.rsp
+mods/example/CMakeFiles/example_mod.dir/src/main.cpp.obj: /home/szym/repos/PrismLoader/mods/example/src/main.cpp
+mods/example/CMakeFiles/example_mod.dir/src/main.cpp.obj: mods/example/CMakeFiles/example_mod.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/szym/repos/PrismLoader/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object mods/example/CMakeFiles/example_mod.dir/src/main.cpp.obj"
+	cd /home/szym/repos/PrismLoader/build/mods/example && /usr/bin/x86_64-w64-mingw32-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT mods/example/CMakeFiles/example_mod.dir/src/main.cpp.obj -MF CMakeFiles/example_mod.dir/src/main.cpp.obj.d -o CMakeFiles/example_mod.dir/src/main.cpp.obj -c /home/szym/repos/PrismLoader/mods/example/src/main.cpp
 
 mods/example/CMakeFiles/example_mod.dir/src/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/example_mod.dir/src/main.cpp.i"
-	cd /home/szym/repos/PrismLoader/build/mods/example && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/szym/repos/PrismLoader/mods/example/src/main.cpp > CMakeFiles/example_mod.dir/src/main.cpp.i
+	cd /home/szym/repos/PrismLoader/build/mods/example && /usr/bin/x86_64-w64-mingw32-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/szym/repos/PrismLoader/mods/example/src/main.cpp > CMakeFiles/example_mod.dir/src/main.cpp.i
 
 mods/example/CMakeFiles/example_mod.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/example_mod.dir/src/main.cpp.s"
-	cd /home/szym/repos/PrismLoader/build/mods/example && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/szym/repos/PrismLoader/mods/example/src/main.cpp -o CMakeFiles/example_mod.dir/src/main.cpp.s
+	cd /home/szym/repos/PrismLoader/build/mods/example && /usr/bin/x86_64-w64-mingw32-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/szym/repos/PrismLoader/mods/example/src/main.cpp -o CMakeFiles/example_mod.dir/src/main.cpp.s
 
 # Object files for target example_mod
 example_mod_OBJECTS = \
-"CMakeFiles/example_mod.dir/src/main.cpp.o"
+"CMakeFiles/example_mod.dir/src/main.cpp.obj"
 
 # External object files for target example_mod
 example_mod_EXTERNAL_OBJECTS =
 
-mods/example/libexample_mod.so: mods/example/CMakeFiles/example_mod.dir/src/main.cpp.o
-mods/example/libexample_mod.so: mods/example/CMakeFiles/example_mod.dir/build.make
-mods/example/libexample_mod.so: mods/example/CMakeFiles/example_mod.dir/compiler_depend.ts
-mods/example/libexample_mod.so: mods/example/CMakeFiles/example_mod.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/szym/repos/PrismLoader/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX shared module libexample_mod.so"
+mods/example/libexample_mod.dll: mods/example/CMakeFiles/example_mod.dir/src/main.cpp.obj
+mods/example/libexample_mod.dll: mods/example/CMakeFiles/example_mod.dir/build.make
+mods/example/libexample_mod.dll: mods/example/CMakeFiles/example_mod.dir/linkLibs.rsp
+mods/example/libexample_mod.dll: mods/example/CMakeFiles/example_mod.dir/objects1.rsp
+mods/example/libexample_mod.dll: mods/example/CMakeFiles/example_mod.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/szym/repos/PrismLoader/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX shared module libexample_mod.dll"
 	cd /home/szym/repos/PrismLoader/build/mods/example && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/example_mod.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-mods/example/CMakeFiles/example_mod.dir/build: mods/example/libexample_mod.so
+mods/example/CMakeFiles/example_mod.dir/build: mods/example/libexample_mod.dll
 .PHONY : mods/example/CMakeFiles/example_mod.dir/build
 
 mods/example/CMakeFiles/example_mod.dir/clean:
