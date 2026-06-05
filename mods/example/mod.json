@@ -1,0 +1,8 @@
+{
+    "id": "example",
+    "name": "Example Mod",
+    "version": "1.0.0",
+    "author": "PrismLoader",
+    "description": "An example mod for PrismLoader",
+    "loaderVersion": ">=0.1.0"
+}

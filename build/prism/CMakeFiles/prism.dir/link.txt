@@ -1,0 +1,1 @@
+/usr/bin/c++ -O3 -DNDEBUG -Wl,--dependency-file=CMakeFiles/prism.dir/link.d CMakeFiles/prism.dir/src/main.cpp.o -o prism  -ldl

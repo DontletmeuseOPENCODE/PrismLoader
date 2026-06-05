@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC -O3 -DNDEBUG -shared -Wl,--dependency-file=CMakeFiles/example_mod.dir/link.d  -o libexample_mod.so CMakeFiles/example_mod.dir/src/main.cpp.o
