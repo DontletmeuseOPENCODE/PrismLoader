@@ -82,7 +82,7 @@ std::optional<uintptr_t> resolveAddress(const char* symbol);
         auto addr = prism::resolveAddress(#name); \
         if (addr) { \
             prism::HookHandle h; \
-            prism::hook((void*)*addr, (void*)name##_Detour, &h); \
+            prism::hook((void*)addr, (void*)name##_Detour, &h); \
             name = (name##_Fn)h.trampoline; \
         } \
     } \

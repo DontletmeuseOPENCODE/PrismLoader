@@ -102,14 +102,18 @@ static std::string dlError() { return dlerror(); }
 bool ModLoader::loadMod(const std::string& path) {
     std::string id;
     if (!parseMetadata(path, id)) {
+        // Fall back to filename without extension. If there's no extension, use
+        // the full filename. A missing lastDot would underflow the substr length
+        // (e.g. "my.prism" -> "m"), so guard it.
         auto lastSlash = path.find_last_of("\\/");
-        auto lastDot = path.find_last_of('.');
-        if (lastSlash != std::string::npos) {
-            id = path.substr(lastSlash + 1, lastDot - lastSlash - 1);
-        } else {
-            id = path.substr(0, lastDot);
-        }
+        auto lastDot   = path.find_last_of('.');
+        const auto stemEnd = (lastSlash == std::string::npos) ? 0 : lastSlash + 1;
+        const auto extStart = (lastDot == std::string::npos || lastDot < stemEnd)
+                                  ? std::string::npos
+                                  : lastDot;
+        id = path.substr(stemEnd, extStart - stemEnd);
     }
+    logMsg("[Prism] Resolved mod id='%s' for path='%s'", id.c_str(), path.c_str());
 
     for (auto& m : mods) {
         if (m.id == id) {
@@ -164,13 +168,17 @@ bool ModLoader::loadMod(const std::string& path) {
     entry.instance.reset(mod);
     entry.enabled = true;
 
+    // Fire the mod's onLoad() callback now that it's registered.
+    if (entry.instance) {
+        entry.instance->onLoad();
+    }
+
     mods.push_back(std::move(entry));
 
     logMsg("[Prism] Loaded mod: %s (%s)", id.c_str(), path.c_str());
 
     return true;
 }
-
 bool ModLoader::unloadMod(const std::string& id) {
     for (auto it = mods.begin(); it != mods.end(); ++it) {
         if (it->id == id) {
@@ -203,15 +211,19 @@ std::vector<std::string> ModLoader::discoverMods(const std::string& directory) {
 
 #ifdef _WIN32
     std::string search = directory + "\\*.dll";
+    logMsg("[Prism] Scanning mods dir: %s", search.c_str());
     WIN32_FIND_DATAA findData;
     HANDLE hFind = FindFirstFileA(search.c_str(), &findData);
 
-    if (hFind == INVALID_HANDLE_VALUE)
+    if (hFind == INVALID_HANDLE_VALUE) {
+        logMsg("[Prism] FindFirstFileA failed (err=%lu)", GetLastError());
         return found;
+    }
 
     do {
         if (!(findData.dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY)) {
             std::string fullPath = directory + "\\" + findData.cFileName;
+            logMsg("[Prism] Found mod file: %s", fullPath.c_str());
             found.push_back(fullPath);
         }
     } while (FindNextFileA(hFind, &findData));
