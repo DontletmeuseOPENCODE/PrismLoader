@@ -1,22 +1,35 @@
-#include <windows.h>
 #include <cstdio>
 #include <cstdarg>
+#include <cstring>
+
+#ifdef _WIN32
+#include <windows.h>
+#else
+#include <cstdlib>
+#endif
 
 namespace prism {
 
 static const char* getLogPath() {
-    static char path[MAX_PATH];
+    static char path[1024];
     static bool resolved = false;
     if (!resolved) {
+#ifdef _WIN32
         char tmp[MAX_PATH];
         DWORD len = GetEnvironmentVariableA("TEMP", tmp, MAX_PATH);
         if (len == 0)
             len = GetEnvironmentVariableA("TMP", tmp, MAX_PATH);
         if (len > 0) {
-            snprintf(path, MAX_PATH, "%s\\prismloader.log", tmp);
+            snprintf(path, sizeof(path), "%s\\prismloader.log", tmp);
         } else {
             strcpy(path, "C:\\prismloader.log");
         }
+#else
+        const char* tmp = getenv("TMPDIR");
+        if (!tmp || !*tmp) tmp = getenv("TEMP");
+        if (!tmp || !*tmp) tmp = "/tmp";
+        snprintf(path, sizeof(path), "%s/prismloader.log", tmp);
+#endif
         resolved = true;
     }
     return path;
@@ -30,6 +43,7 @@ void logMsg(const char* fmt, ...) {
     vsnprintf(buf, sizeof(buf), fmt, args);
     va_end(args);
 
+#ifdef _WIN32
     HANDLE hFile = CreateFileA(getLogPath(), GENERIC_WRITE,
         FILE_SHARE_READ, nullptr, OPEN_ALWAYS, FILE_ATTRIBUTE_NORMAL, nullptr);
     if (hFile != INVALID_HANDLE_VALUE) {
@@ -39,6 +53,13 @@ void logMsg(const char* fmt, ...) {
         WriteFile(hFile, "\n", 1, &written, nullptr);
         CloseHandle(hFile);
     }
+#else
+    FILE* f = fopen(getLogPath(), "a");
+    if (f) {
+        fprintf(f, "%s\n", buf);
+        fclose(f);
+    }
+#endif
 }
 
 } // namespace prism
@@ -46,7 +67,13 @@ void logMsg(const char* fmt, ...) {
 #include <Prism/Log.hpp>
 
 extern "C" {
-__declspec(dllexport) void prism_log(int level, const char* mod, const char* msg) {
+
+#ifdef _WIN32
+__declspec(dllexport)
+#endif
+__attribute__((visibility("default")))
+void prism_log(int level, const char* mod, const char* msg) {
     prism::logMsg("[Prism][%s][%s] %s", prism::logLevelName(static_cast<prism::LogLevel>(level)), mod, msg);
 }
+
 }

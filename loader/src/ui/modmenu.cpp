@@ -1,6 +1,8 @@
 // PrismLoader - Mod Menu UI
 // Hooks MenuLayer::init to inject a "Mod Library" button (like Geode) using raw Cocos2d API.
 
+#ifdef _WIN32
+
 #include <Prism/HookEngine.hpp>
 #include <Prism/PatternScan.hpp>
 #include <Prism/ModLoader.hpp>
@@ -271,3 +273,5 @@ void installModMenuHook() {
 }
 
 } // namespace prism
+
+#endif // _WIN32
