@@ -1826,6 +1826,7 @@ loader/CMakeFiles/prismloader.dir/src/log.cpp.obj
  /usr/x86_64-w64-mingw32/include/c++/16.1.0/cstdarg
  /usr/x86_64-w64-mingw32/include/c++/16.1.0/cstdio
  /usr/x86_64-w64-mingw32/include/c++/16.1.0/cstdlib
+ /usr/x86_64-w64-mingw32/include/c++/16.1.0/cstring
  /usr/x86_64-w64-mingw32/include/c++/16.1.0/ext/numeric_traits.h
  /usr/x86_64-w64-mingw32/include/c++/16.1.0/ext/type_traits.h
  /usr/x86_64-w64-mingw32/include/c++/16.1.0/initializer_list
@@ -2458,6 +2459,7 @@ loader/CMakeFiles/prismloader.dir/src/modloader.cpp.obj
 
 loader/CMakeFiles/prismloader.dir/src/patternscan.cpp.obj
  /home/szym/repos/PrismLoader/loader/src/patternscan.cpp
+ /home/szym/repos/PrismLoader/loader/include/Log.hpp
  /home/szym/repos/PrismLoader/loader/include/Prism/PatternScan.hpp
  /usr/lib/gcc/x86_64-w64-mingw32/16.1.0/include/adxintrin.h
  /usr/lib/gcc/x86_64-w64-mingw32/16.1.0/include/ammintrin.h

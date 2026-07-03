@@ -1,17 +1,32 @@
 loader/CMakeFiles/prismloader.dir/src/log.cpp.obj: \
  /home/szym/repos/PrismLoader/loader/src/log.cpp \
- /usr/x86_64-w64-mingw32/include/windows.h \
+ /usr/x86_64-w64-mingw32/include/c++/16.1.0/cstdio \
+ /usr/x86_64-w64-mingw32/include/c++/16.1.0/x86_64-w64-mingw32/bits/c++config.h \
+ /usr/x86_64-w64-mingw32/include/c++/16.1.0/x86_64-w64-mingw32/bits/os_defines.h \
+ /usr/x86_64-w64-mingw32/include/c++/16.1.0/x86_64-w64-mingw32/bits/cpu_defines.h \
+ /usr/x86_64-w64-mingw32/include/c++/16.1.0/pstl/pstl_config.h \
+ /usr/x86_64-w64-mingw32/include/stdio.h \
+ /usr/x86_64-w64-mingw32/include/corecrt_stdio_config.h \
+ /usr/x86_64-w64-mingw32/include/corecrt.h \
  /usr/x86_64-w64-mingw32/include/_mingw.h \
  /usr/x86_64-w64-mingw32/include/_mingw_mac.h \
  /usr/x86_64-w64-mingw32/include/_mingw_secapi.h \
  /usr/x86_64-w64-mingw32/include/vadefs.h \
- /usr/x86_64-w64-mingw32/include/sdkddkver.h \
- /usr/x86_64-w64-mingw32/include/excpt.h \
- /usr/x86_64-w64-mingw32/include/crtdefs.h \
- /usr/x86_64-w64-mingw32/include/corecrt.h \
+ /usr/x86_64-w64-mingw32/include/_mingw_off_t.h \
+ /usr/x86_64-w64-mingw32/include/swprintf.inl \
+ /usr/x86_64-w64-mingw32/include/sec_api/stdio_s.h \
+ /usr/x86_64-w64-mingw32/include/c++/16.1.0/cstdarg \
  /usr/lib/gcc/x86_64-w64-mingw32/16.1.0/include/stdarg.h \
  /usr/x86_64-w64-mingw32/include/stdarg.h \
  /usr/x86_64-w64-mingw32/include/_mingw_stdarg.h \
+ /usr/x86_64-w64-mingw32/include/c++/16.1.0/cstring \
+ /usr/x86_64-w64-mingw32/include/c++/16.1.0/bits/version.h \
+ /usr/x86_64-w64-mingw32/include/string.h \
+ /usr/x86_64-w64-mingw32/include/crtdefs.h \
+ /usr/x86_64-w64-mingw32/include/sec_api/string_s.h \
+ /usr/x86_64-w64-mingw32/include/windows.h \
+ /usr/x86_64-w64-mingw32/include/sdkddkver.h \
+ /usr/x86_64-w64-mingw32/include/excpt.h \
  /usr/x86_64-w64-mingw32/include/windef.h \
  /usr/x86_64-w64-mingw32/include/winapifamily.h \
  /usr/x86_64-w64-mingw32/include/minwindef.h \
@@ -27,8 +42,6 @@ loader/CMakeFiles/prismloader.dir/src/log.cpp.obj: \
  /usr/x86_64-w64-mingw32/include/psdk_inc/intrin-impl.h \
  /usr/x86_64-w64-mingw32/include/basetsd.h \
  /usr/x86_64-w64-mingw32/include/guiddef.h \
- /usr/x86_64-w64-mingw32/include/string.h \
- /usr/x86_64-w64-mingw32/include/sec_api/string_s.h \
  /usr/lib/gcc/x86_64-w64-mingw32/16.1.0/include/x86intrin.h \
  /usr/lib/gcc/x86_64-w64-mingw32/16.1.0/include/x86gprintrin.h \
  /usr/lib/gcc/x86_64-w64-mingw32/16.1.0/include/ia32intrin.h \
@@ -77,10 +90,6 @@ loader/CMakeFiles/prismloader.dir/src/log.cpp.obj: \
  /usr/lib/gcc/x86_64-w64-mingw32/16.1.0/include/mm_malloc.h \
  /usr/x86_64-w64-mingw32/include/c++/16.1.0/stdlib.h \
  /usr/x86_64-w64-mingw32/include/c++/16.1.0/cstdlib \
- /usr/x86_64-w64-mingw32/include/c++/16.1.0/x86_64-w64-mingw32/bits/c++config.h \
- /usr/x86_64-w64-mingw32/include/c++/16.1.0/x86_64-w64-mingw32/bits/os_defines.h \
- /usr/x86_64-w64-mingw32/include/c++/16.1.0/x86_64-w64-mingw32/bits/cpu_defines.h \
- /usr/x86_64-w64-mingw32/include/c++/16.1.0/pstl/pstl_config.h \
  /usr/x86_64-w64-mingw32/include/stdlib.h \
  /usr/x86_64-w64-mingw32/include/corecrt_wstdlib.h \
  /usr/lib/gcc/x86_64-w64-mingw32/16.1.0/include/limits.h \
@@ -291,19 +300,11 @@ loader/CMakeFiles/prismloader.dir/src/log.cpp.obj: \
  /usr/x86_64-w64-mingw32/include/winsvc.h \
  /usr/x86_64-w64-mingw32/include/mcx.h \
  /usr/x86_64-w64-mingw32/include/imm.h \
- /usr/x86_64-w64-mingw32/include/c++/16.1.0/cstdio \
- /usr/x86_64-w64-mingw32/include/stdio.h \
- /usr/x86_64-w64-mingw32/include/corecrt_stdio_config.h \
- /usr/x86_64-w64-mingw32/include/_mingw_off_t.h \
- /usr/x86_64-w64-mingw32/include/swprintf.inl \
- /usr/x86_64-w64-mingw32/include/sec_api/stdio_s.h \
- /usr/x86_64-w64-mingw32/include/c++/16.1.0/cstdarg \
  /home/szym/repos/PrismLoader/sdk/include/Prism/Log.hpp \
  /usr/x86_64-w64-mingw32/include/c++/16.1.0/utility \
  /usr/x86_64-w64-mingw32/include/c++/16.1.0/bits/stl_relops.h \
  /usr/x86_64-w64-mingw32/include/c++/16.1.0/bits/stl_pair.h \
  /usr/x86_64-w64-mingw32/include/c++/16.1.0/type_traits \
- /usr/x86_64-w64-mingw32/include/c++/16.1.0/bits/version.h \
  /usr/x86_64-w64-mingw32/include/c++/16.1.0/bits/move.h \
  /usr/x86_64-w64-mingw32/include/c++/16.1.0/bits/utility.h \
  /usr/x86_64-w64-mingw32/include/c++/16.1.0/compare \

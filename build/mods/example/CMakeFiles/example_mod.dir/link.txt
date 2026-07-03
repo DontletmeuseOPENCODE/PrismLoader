@@ -1,3 +1,3 @@
 /usr/bin/cmake -E rm -f CMakeFiles/example_mod.dir/objects.a
 /usr/bin/x86_64-w64-mingw32-ar qc CMakeFiles/example_mod.dir/objects.a @CMakeFiles/example_mod.dir/objects1.rsp
-/usr/bin/x86_64-w64-mingw32-g++ -shared -o libexample_mod.dll -Wl,--major-image-version,0,--minor-image-version,0 -Wl,--whole-archive CMakeFiles/example_mod.dir/objects.a -Wl,--no-whole-archive @CMakeFiles/example_mod.dir/linkLibs.rsp
+/usr/bin/x86_64-w64-mingw32-g++ -shared -static -static-libgcc -static-libstdc++ -o libexample_mod.dll -Wl,--out-implib,libexample_mod.dll.a -Wl,--major-image-version,0,--minor-image-version,0 -Wl,--whole-archive CMakeFiles/example_mod.dir/objects.a -Wl,--no-whole-archive @CMakeFiles/example_mod.dir/linkLibs.rsp

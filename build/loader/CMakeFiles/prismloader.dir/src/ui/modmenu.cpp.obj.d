@@ -475,5 +475,4 @@ loader/CMakeFiles/prismloader.dir/src/ui/modmenu.cpp.obj: \
  /usr/x86_64-w64-mingw32/include/winsvc.h \
  /usr/x86_64-w64-mingw32/include/mcx.h \
  /usr/x86_64-w64-mingw32/include/imm.h \
- /usr/x86_64-w64-mingw32/include/psapi.h \
  /usr/x86_64-w64-mingw32/include/c++/16.1.0/cstring
