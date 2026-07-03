@@ -1,7 +1,14 @@
 #include <Prism/HookEngine.hpp>
 #include <Log.hpp>
 #include <cstring>
+
+#ifdef _WIN32
 #include <windows.h>
+#else
+#include <sys/mman.h>
+#include <unistd.h>
+#include <cstring>
+#endif
 
 namespace prism {
 
@@ -18,10 +25,25 @@ HookEngine::~HookEngine() {
     }
 }
 
+#ifdef _WIN32
 static bool setMemoryProtection(void* addr, size_t size, DWORD prot) {
     DWORD oldProt;
     return VirtualProtect(addr, size, prot, &oldProt) != FALSE;
 }
+
+static void flushICache(void* addr, size_t size) {
+    FlushInstructionCache(GetCurrentProcess(), addr, size);
+}
+#else
+static bool setMemoryProtection(void* addr, size_t size, int prot) {
+    return mprotect(addr, size, prot) == 0;
+}
+
+static void flushICache(void* addr, size_t size) {
+    __builtin___clear_cache(reinterpret_cast<char*>(addr),
+                            reinterpret_cast<char*>(addr) + size);
+}
+#endif
 
 bool HookEngine::installHook(void* target, void* detour, Hook* out) {
     std::lock_guard lock(mutex);
@@ -46,7 +68,11 @@ bool HookEngine::installHook(void* target, void* detour, Hook* out) {
     }
 
     if (!applyDetour(hook)) {
+#ifdef _WIN32
         VirtualFree(hook.trampoline, 0, MEM_RELEASE);
+#else
+        munmap(hook.trampoline, 64);
+#endif
         return false;
     }
 
@@ -76,9 +102,16 @@ bool HookEngine::removeHook(Hook* hook) {
 }
 
 void* HookEngine::createTrampoline(void* target, int numPrefixBytes) {
+#ifdef _WIN32
     void* trampoline = VirtualAlloc(nullptr, 64, MEM_COMMIT | MEM_RESERVE, PAGE_EXECUTE_READWRITE);
     if (!trampoline)
         return nullptr;
+#else
+    void* trampoline = mmap(nullptr, 64, PROT_READ | PROT_WRITE | PROT_EXEC,
+                            MAP_PRIVATE | MAP_ANONYMOUS, -1, 0);
+    if (trampoline == MAP_FAILED)
+        return nullptr;
+#endif
 
     auto* code = static_cast<uint8_t*>(trampoline);
 
@@ -95,8 +128,10 @@ void* HookEngine::createTrampoline(void* target, int numPrefixBytes) {
     void* jumpTarget = static_cast<uint8_t*>(target) + numPrefixBytes;
     memcpy(code + 6, &jumpTarget, sizeof(void*));
 
+#ifdef _WIN32
     DWORD old;
     VirtualProtect(trampoline, 64, PAGE_EXECUTE_READ, &old);
+#endif
 
     return trampoline;
 }
@@ -104,8 +139,16 @@ void* HookEngine::createTrampoline(void* target, int numPrefixBytes) {
 bool HookEngine::applyDetour(Hook& hook) {
     if (hook.active) return true;
 
-    if (!setMemoryProtection(hook.target, 14, PAGE_READWRITE)) {
-        logMsg("[Prism] VirtualProtect(RW) failed: %lu", GetLastError());
+#ifdef _WIN32
+    constexpr int protRW = PAGE_READWRITE;
+    constexpr int protRX = PAGE_EXECUTE_READ;
+#else
+    constexpr int protRW = PROT_READ | PROT_WRITE;
+    constexpr int protRX = PROT_READ | PROT_EXEC;
+#endif
+
+    if (!setMemoryProtection(hook.target, 14, protRW)) {
+        logMsg("[Prism] setMemoryProtection(RW) failed");
         return false;
     }
 
@@ -119,9 +162,9 @@ bool HookEngine::applyDetour(Hook& hook) {
     code[5] = 0x00;
     memcpy(code + 6, &hook.detour, sizeof(void*));
 
-    FlushInstructionCache(GetCurrentProcess(), code, 14);
+    flushICache(code, 14);
 
-    setMemoryProtection(hook.target, 14, PAGE_EXECUTE_READ);
+    setMemoryProtection(hook.target, 14, protRX);
 
     hook.active = true;
     return true;
@@ -130,13 +173,21 @@ bool HookEngine::applyDetour(Hook& hook) {
 bool HookEngine::restoreOriginal(Hook& hook) {
     if (!hook.active) return true;
 
-    if (!setMemoryProtection(hook.target, 14, PAGE_READWRITE))
+#ifdef _WIN32
+    constexpr int protRW = PAGE_READWRITE;
+    constexpr int protRX = PAGE_EXECUTE_READ;
+#else
+    constexpr int protRW = PROT_READ | PROT_WRITE;
+    constexpr int protRX = PROT_READ | PROT_EXEC;
+#endif
+
+    if (!setMemoryProtection(hook.target, 14, protRW))
         return false;
 
     memcpy(hook.target, hook.originalBytes.data(), 14);
-    FlushInstructionCache(GetCurrentProcess(), hook.target, 14);
+    flushICache(hook.target, 14);
 
-    setMemoryProtection(hook.target, 14, PAGE_EXECUTE_READ);
+    setMemoryProtection(hook.target, 14, protRX);
     hook.active = false;
 
     return true;
@@ -149,7 +200,8 @@ bool HookEngine::restoreOriginal(Hook& hook) {
 
 extern "C" {
 
-__declspec(dllexport) bool prism_hook(void* target, void* detour, prism::HookHandle* out) {
+__attribute__((visibility("default")))
+bool prism_hook(void* target, void* detour, prism::HookHandle* out) {
     prism::Hook hook;
     bool success = prism::HookEngine::get().installHook(target, detour, &hook);
     if (success && out) {
@@ -160,12 +212,14 @@ __declspec(dllexport) bool prism_hook(void* target, void* detour, prism::HookHan
     return success;
 }
 
-__declspec(dllexport) bool prism_unhook(prism::HookHandle* handle) {
+__attribute__((visibility("default")))
+bool prism_unhook(prism::HookHandle* handle) {
     if (!handle) return false;
     return prism::HookEngine::get().removeHook(handle->target);
 }
 
-__declspec(dllexport) void* prism_resolve_address(const char* symbol) {
+__attribute__((visibility("default")))
+void* prism_resolve_address(const char* symbol) {
     auto addr = prism::PatternScanner::get().resolveSymbol(symbol);
     return addr ? reinterpret_cast<void*>(*addr) : nullptr;
 }

@@ -130,6 +130,7 @@ loader/CMakeFiles/prismloader.dir/src/patternscan.cpp.obj: \
  /usr/x86_64-w64-mingw32/include/c++/16.1.0/bits/stl_bvector.h \
  /usr/x86_64-w64-mingw32/include/c++/16.1.0/bits/vector.tcc \
  /usr/x86_64-w64-mingw32/include/c++/16.1.0/bits/formatfwd.h \
+ /home/szym/repos/PrismLoader/loader/include/Log.hpp \
  /usr/x86_64-w64-mingw32/include/c++/16.1.0/cstring \
  /usr/x86_64-w64-mingw32/include/string.h \
  /usr/x86_64-w64-mingw32/include/sec_api/string_s.h \

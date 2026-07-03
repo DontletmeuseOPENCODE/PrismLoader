@@ -4,16 +4,32 @@
 #include <cstdio>
 #include <cstring>
 #include <string>
+#include <vector>
+
+#ifdef _WIN32
 #include <windows.h>
+#else
+#include <cstdlib>
+#include <cstring>
+#include <dirent.h>
+#include <dlfcn.h>
+#include <sys/stat.h>
+#endif
 
 namespace prism {
 
 static std::string getModsDirectory() {
+#ifdef _WIN32
     char path[MAX_PATH];
     DWORD len = GetEnvironmentVariableA("USERPROFILE", path, MAX_PATH);
     if (len == 0)
         GetEnvironmentVariableA("HOME", path, MAX_PATH);
     return std::string(path) + "\\.prismloader\\mods";
+#else
+    const char* home = getenv("HOME");
+    if (!home) home = "/tmp";
+    return std::string(home) + "/.prismloader/mods";
+#endif
 }
 
 ModLoader& ModLoader::get() {
@@ -26,7 +42,14 @@ bool ModLoader::parseMetadata(const std::string& path, std::string& id) {
     if (dirEnd == std::string::npos) return false;
 
     std::string dir = path.substr(0, dirEnd);
-    std::string metaPath = dir + "\\mod.json";
+    std::string metaPath = dir + "/mod.json";
+#ifdef _WIN32
+    // Try both separators for the metadata file.
+    if (FILE* f = fopen((dir + "\\mod.json").c_str(), "r")) {
+        fclose(f);
+        metaPath = dir + "\\mod.json";
+    }
+#endif
 
     FILE* f = fopen(metaPath.c_str(), "r");
     if (!f) return false;
@@ -55,17 +78,42 @@ bool ModLoader::parseMetadata(const std::string& path, std::string& id) {
     return false;
 }
 
+#ifdef _WIN32
+static std::string fileExt(const std::string& path) {
+    auto dot = path.find_last_of('.');
+    if (dot == std::string::npos) return "";
+    std::string ext = path.substr(dot);
+    for (auto& c : ext) c = (char)tolower((unsigned char)c);
+    return ext;
+}
+#else
+static void* loadSharedLib(const std::string& path) {
+    return dlopen(path.c_str(), RTLD_NOW | RTLD_LOCAL);
+}
+static void unloadSharedLib(void* h) {
+    if (h) dlclose((void*)h);
+}
+static void* getSym(void* h, const char* name) {
+    return dlsym(h, name);
+}
+static std::string dlError() { return dlerror(); }
+#endif
+
 bool ModLoader::loadMod(const std::string& path) {
     std::string id;
     if (!parseMetadata(path, id)) {
+        // Fall back to filename without extension. If there's no extension, use
+        // the full filename. A missing lastDot would underflow the substr length
+        // (e.g. "my.prism" -> "m"), so guard it.
         auto lastSlash = path.find_last_of("\\/");
-        auto lastDot = path.find_last_of('.');
-        if (lastSlash != std::string::npos) {
-            id = path.substr(lastSlash + 1, lastDot - lastSlash - 1);
-        } else {
-            id = path.substr(0, lastDot);
-        }
+        auto lastDot   = path.find_last_of('.');
+        const auto stemEnd = (lastSlash == std::string::npos) ? 0 : lastSlash + 1;
+        const auto extStart = (lastDot == std::string::npos || lastDot < stemEnd)
+                                  ? std::string::npos
+                                  : lastDot;
+        id = path.substr(stemEnd, extStart - stemEnd);
     }
+    logMsg("[Prism] Resolved mod id='%s' for path='%s'", id.c_str(), path.c_str());
 
     for (auto& m : mods) {
         if (m.id == id) {
@@ -74,6 +122,7 @@ bool ModLoader::loadMod(const std::string& path) {
         }
     }
 
+#ifdef _WIN32
     HMODULE handle = LoadLibraryA(path.c_str());
     if (!handle) {
         logMsg("[Prism] Failed to load mod '%s': %lu", path.c_str(), GetLastError());
@@ -86,10 +135,29 @@ bool ModLoader::loadMod(const std::string& path) {
         FreeLibrary(handle);
         return false;
     }
+#else
+    void* handle = loadSharedLib(path);
+    if (!handle) {
+        logMsg("[Prism] Failed to load mod '%s': %s", path.c_str(), dlError().c_str());
+        return false;
+    }
+
+    using InitFn = Mod* (*)();
+    auto initFn = reinterpret_cast<InitFn>(getSym(handle, "prismModInit"));
+    if (!initFn) {
+        logMsg("[Prism] Mod '%s' has no prismModInit: %s", path.c_str(), dlError().c_str());
+        unloadSharedLib(handle);
+        return false;
+    }
+#endif
 
     Mod* mod = initFn();
     if (!mod) {
+#ifdef _WIN32
         FreeLibrary(handle);
+#else
+        unloadSharedLib(handle);
+#endif
         return false;
     }
 
@@ -100,24 +168,34 @@ bool ModLoader::loadMod(const std::string& path) {
     entry.instance.reset(mod);
     entry.enabled = true;
 
+    // Fire the mod's onLoad() callback now that it's registered.
+    if (entry.instance) {
+        entry.instance->onLoad();
+    }
+
     mods.push_back(std::move(entry));
 
     logMsg("[Prism] Loaded mod: %s (%s)", id.c_str(), path.c_str());
 
     return true;
 }
-
 bool ModLoader::unloadMod(const std::string& id) {
     for (auto it = mods.begin(); it != mods.end(); ++it) {
         if (it->id == id) {
             it->instance->onUnload();
             it->instance.reset();
 
+#ifdef _WIN32
             auto exitFn = reinterpret_cast<void(*)(Mod*)>(GetProcAddress(
                 (HMODULE)it->handle, "prismModExit"));
             if (exitFn) exitFn(nullptr);
-
             FreeLibrary((HMODULE)it->handle);
+#else
+            using ExitFn = void(*)(Mod*);
+            auto exitFn = reinterpret_cast<ExitFn>(getSym(it->handle, "prismModExit"));
+            if (exitFn) exitFn(nullptr);
+            unloadSharedLib(it->handle);
+#endif
 
             logMsg("[Prism] Unloaded mod: %s", id.c_str());
 
@@ -131,21 +209,45 @@ bool ModLoader::unloadMod(const std::string& id) {
 std::vector<std::string> ModLoader::discoverMods(const std::string& directory) {
     std::vector<std::string> found;
 
+#ifdef _WIN32
     std::string search = directory + "\\*.dll";
+    logMsg("[Prism] Scanning mods dir: %s", search.c_str());
     WIN32_FIND_DATAA findData;
     HANDLE hFind = FindFirstFileA(search.c_str(), &findData);
 
-    if (hFind == INVALID_HANDLE_VALUE)
+    if (hFind == INVALID_HANDLE_VALUE) {
+        logMsg("[Prism] FindFirstFileA failed (err=%lu)", GetLastError());
         return found;
+    }
 
     do {
         if (!(findData.dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY)) {
             std::string fullPath = directory + "\\" + findData.cFileName;
+            logMsg("[Prism] Found mod file: %s", fullPath.c_str());
             found.push_back(fullPath);
         }
     } while (FindNextFileA(hFind, &findData));
 
     FindClose(hFind);
+#else
+    DIR* d = opendir(directory.c_str());
+    if (!d) return found;
+
+    struct dirent* ent;
+    while ((ent = readdir(d)) != nullptr) {
+        if (ent->d_name[0] == '.') continue;
+        std::string name = ent->d_name;
+        // Accept .so and .prism files as mods on Linux.
+        if (name.size() < 4) continue;
+        std::string ext = name.substr(name.size() - 3);
+        for (auto& c : ext) c = (char)tolower((unsigned char)c);
+        if (ext != ".so" && (name.size() < 8 || name.substr(name.size() - 6) != ".prism")) {
+            continue;
+        }
+        found.push_back(directory + "/" + name);
+    }
+    closedir(d);
+#endif
     return found;
 }
 

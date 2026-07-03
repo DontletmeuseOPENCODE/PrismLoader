@@ -1,16 +1,31 @@
 #include <Prism/PatternScan.hpp>
+#include <Log.hpp>
 #include <cstdio>
 #include <cstring>
+#include <cctype>
+
+#ifdef _WIN32
 #include <windows.h>
 #include <psapi.h>
+#else
+#include <cstdio>
+#include <cstdlib>
+#include <cstring>
+#include <fstream>
+#include <string>
+#include <link.h>
+#include <dlfcn.h>
+#endif
 
 namespace prism {
 
+#ifdef _WIN32
 static FILE* logFile() {
     FILE* f = nullptr;
     fopen_s(&f, "C:\\prismloader.log", "a");
     return f;
 }
+#endif
 
 PatternScanner& PatternScanner::get() {
     static PatternScanner instance;
@@ -23,12 +38,16 @@ bool PatternScanner::load() {
     if (!findGdBinary())
         return false;
 
+#ifdef _WIN32
     auto log = logFile();
     if (log) {
         fprintf(log, "[Prism] GD base: 0x%llx, code end: 0x%llx\n",
                 (unsigned long long)baseAddr, (unsigned long long)codeEnd);
         fclose(log);
     }
+#endif
+    logMsg("[Prism] GD base: 0x%llx, code end: 0x%llx",
+           (unsigned long long)baseAddr, (unsigned long long)codeEnd);
 
     return true;
 }
@@ -39,6 +58,7 @@ void PatternScanner::unload() {
     codeEnd = 0;
 }
 
+#ifdef _WIN32
 bool PatternScanner::findGdBinary() {
     HANDLE process = GetCurrentProcess();
     HMODULE modules[256];
@@ -85,6 +105,54 @@ bool PatternScanner::findGdBinary() {
 
     return false;
 }
+#else
+// Linux: parse /proc/self/maps to find the executable and shared libs.
+bool PatternScanner::findGdBinary() {
+    std::ifstream maps("/proc/self/maps");
+    if (!maps.is_open())
+        return false;
+
+    std::string line;
+    while (std::getline(maps, line)) {
+        // Format: addr-addr perms offset dev inode pathname
+        // We just want the executable region of the main binary (or libGD/cocos2d).
+        uintptr_t start = 0, end = 0;
+        char perms[8] = {0};
+        char path[512] = {0};
+        if (sscanf(line.c_str(), "%lx-%lx %7s %*x %*s %*u %511s",
+                   &start, &end, perms, path) < 3) {
+            continue;
+        }
+
+        if (strstr(path, "GeometryDash") || strstr(path, "libcocos2d") ||
+            strstr(path, "geometrydash")) {
+            // For the .exe, we want the executable region only.
+            if (perms[2] == 'x') {
+                baseAddr = start;
+                codeEnd = end;
+                return true;
+            }
+        }
+    }
+
+    // Fallback: use the main program's first executable region.
+    maps.clear();
+    maps.seekg(0);
+    while (std::getline(maps, line)) {
+        uintptr_t start = 0, end = 0;
+        char perms[8] = {0};
+        if (sscanf(line.c_str(), "%lx-%lx %7s", &start, &end, perms) == 3) {
+            if (perms[2] == 'x') {
+                baseAddr = start;
+                codeEnd = end;
+                return true;
+            }
+        }
+    }
+
+    return false;
+}
+#endif
 
 bool PatternScanner::isIdSym(const char* name) {
     return name && (
@@ -94,6 +162,7 @@ bool PatternScanner::isIdSym(const char* name) {
     );
 }
 
+#ifdef _WIN32
 std::optional<uintptr_t> PatternScanner::resolveSymbol(const char* symbol) {
     if (!load()) return std::nullopt;
 
@@ -114,6 +183,47 @@ std::optional<uintptr_t> PatternScanner::resolveSymbol(const char* symbol) {
 
     return std::nullopt;
 }
+#else
+std::optional<uintptr_t> PatternScanner::resolveSymbol(const char* symbol) {
+    if (!load()) return std::nullopt;
+
+    // Use dl_iterate_phdr to look through loaded objects, then dlsym.
+    // For mangled C++ names, we fall back to a linear scan of the symbol
+    // table of each loaded object.
+    void* h = dlopen(nullptr, RTLD_NOW);
+    if (!h) return std::nullopt;
+
+    void* addr = dlsym(h, symbol);
+    if (addr) {
+        dlclose(h);
+        return reinterpret_cast<uintptr_t>(addr);
+    }
+
+    // Try each loaded object explicitly.
+    std::ifstream maps("/proc/self/maps");
+    std::string line;
+    while (std::getline(maps, line)) {
+        char path[512] = {0};
+        uintptr_t s = 0, e = 0;
+        if (sscanf(line.c_str(), "%lx-%lx %*s %*x %*s %*u %511s",
+                   &s, &e, path) < 3) continue;
+        if (!*path || path[0] == '[') continue;
+
+        void* oh = dlopen(path, RTLD_NOW | RTLD_NOLOAD);
+        if (!oh) continue;
+
+        void* a = dlsym(oh, symbol);
+        dlclose(oh);
+        if (a) {
+            dlclose(h);
+            return reinterpret_cast<uintptr_t>(a);
+        }
+    }
+
+    dlclose(h);
+    return std::nullopt;
+}
+#endif
 
 std::optional<uintptr_t> PatternScanner::findPattern(
     std::string_view pattern,

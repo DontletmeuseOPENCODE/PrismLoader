@@ -1,3 +1,5 @@
+#ifdef _WIN32
+
 #include <Prism/PatternScan.hpp>
 #include <Prism/HookEngine.hpp>
 #include <Prism/Loader.hpp>
@@ -88,3 +90,5 @@ bool detectGdInit() {
 }
 
 } // namespace prism
+
+#endif // _WIN32
